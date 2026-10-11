@@ -1,0 +1,25 @@
+{
+  "site": "growth10",
+  "code": "GROWTH10",
+  "status": "Verified at checkout",
+  "record": {
+    "eventKey": "growth10-record-2880001",
+    "observedAt": "2026-10-10T06:06:01.349Z",
+    "publishedAt": "2026-10-10T12:33:47.000Z",
+    "lineItems": [
+      {
+        "name": "SS-31 50mg - Single vial",
+        "quantity": 1,
+        "unitPrice": 150
+      }
+    ],
+    "totals": {
+      "currency": "CAD",
+      "subtotal": 150,
+      "discount": 15,
+      "tax": null,
+      "total": 135
+    },
+    "publicEvidenceUrl": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-10-10/growth10-cart-1-cart_totals_3b4921ab.jpg"
+  }
+}

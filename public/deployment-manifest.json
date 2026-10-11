@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "profileId": "growth10",
+  "code": "GROWTH10",
+  "canonicalOrigin": "https://growthguysgrowth10.ca",
+  "generatedAt": "2026-10-11T15:33:00Z",
+  "source": "accepted_record_snapshot",
+  "eventKey": "growth10-record-2880001",
+  "recordPublishedAt": "2026-10-10T12:33:47.000Z",
+  "staticRoutes": {
+    "/": "/index.html",
+    "/verification-archive/": "/verification-archive/index.html",
+    "/api/current-record": "/api/current-record.json",
+    "/verification-feed.json": "/verification-feed.json",
+    "/feed.xml": "/feed.xml"
+  },
+  "deploymentState": "built_not_deployed"
+}

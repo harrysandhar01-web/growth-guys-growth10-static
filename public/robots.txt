@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://growthguysgrowth10.ca/sitemap.xml
