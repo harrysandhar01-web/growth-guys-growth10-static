@@ -1,0 +1,21 @@
+{
+  "site": "GROWTH10",
+  "code": "GROWTH10",
+  "observation_date": "2026-10-18",
+  "timezone": "America/Vancouver",
+  "product": "Aromasin (Exemestane) Tablets 12.5mg, one item",
+  "subtotal_cad": 70.0,
+  "discount_cad": 7.0,
+  "shipping_cad": 20.0,
+  "bitcoin_discount_visible_cad": 12.6,
+  "bitcoin_selected": false,
+  "total_cad": 70.4,
+  "merchant_message": "Coupon code applied successfully.",
+  "evidence_file": "final-accepted-cart.html",
+  "evidence_sha256": "b494a696682db4838f25bf8bd44c19c16f18cc604bd6227d451c53d44a268d31",
+  "cart_cleaned": true,
+  "checkout_entered": false,
+  "payment_entered": false,
+  "publication_status": "cart-observed-pending-owner-acceptance",
+  "notes": "Bitcoin discount was visible in the cart, but Bitcoin was not selected. This is not a published or accepted verification record."
+}
