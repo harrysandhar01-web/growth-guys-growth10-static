@@ -164,7 +164,7 @@
   "deploymentState": "built_not_deployed",
   "canonicalSnapshot": {
     "generatedAt": "2026-10-13T22:25:29.602Z",
-    "publicRouteCount": 147,
+    "publicRouteCount": 148,
     "publicAssetCount": 31,
     "currentRecordReference": null,
     "currentRecordObservedAt": "2026-10-13T15:07:17.000Z",
