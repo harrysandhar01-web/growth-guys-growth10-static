@@ -1,20 +1,20 @@
 {
   "version": "1.0",
   "status": "owner-reviewed",
-  "record_id": "growth10-observed-20261018-230648",
+  "record_id": "growth10-observed-20261019-145508",
   "canonical_url": "https://growthguysgrowth10.ca/growth10#current-record",
   "code": "GROWTH10",
   "method": "Owner-approved cart-only observation",
   "scope": "Documented pre-payment cart observation; no identity, address, payment, or purchase was submitted.",
-  "observed_at": "2026-10-18T23:06:48.489Z",
+  "observed_at": "2026-10-19T14:55:08Z",
   "observed_timezone": "America/Vancouver",
-  "published_at": "2026-10-18T23:06:48.489Z",
-  "product": "Aromasin (Exemestane) Tablets 12.5mg",
-  "subtotal_cad": "70.00",
-  "discount_cad": "7.00",
+  "published_at": "2026-10-19T14:55:08Z",
+  "product": "GHK-Cu 100mg - Single vial",
+  "subtotal_cad": "55.00",
+  "discount_cad": "5.50",
   "shipping_cad": "20.00",
-  "total_cad": "70.40",
+  "total_cad": "59.60",
   "payment_method_selected": false,
   "visible_other_adjustment": "Bitcoin Discount (20%)",
-  "evidence_url": "https://growthguysgrowth10.ca/evidence/growth10-observed-20261018-230648/"
+  "evidence_url": "https://growthguysgrowth10.ca/verification-archive/growth10-observed-20261019-145508/"
 }
