@@ -1,0 +1,19 @@
+{
+  "record_reference": "growth10-observed-20261018-230648",
+  "code": "GROWTH10",
+  "status": "owner-reviewed",
+  "observed_at": "2026-10-18T23:06:48.489Z",
+  "observed_timezone": "America/Vancouver",
+  "method": "Owner-approved cart-only observation",
+  "scope": "Documented pre-payment cart observation; no identity, address, payment, or purchase was submitted.",
+  "product": "Aromasin (Exemestane) Tablets 12.5mg",
+  "quantity": 1,
+  "currency": "CAD",
+  "subtotal": "70.00",
+  "discount": "7.00",
+  "shipping": "20.00",
+  "total": "70.40",
+  "payment_method_selected": false,
+  "visible_other_adjustment": "Bitcoin Discount (20%)",
+  "record_url": "/verification-archive/growth10-observed-20261018-230648/"
+}
