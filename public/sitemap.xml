@@ -380,13 +380,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://growthguysgrowth10.ca/guides/product-page-date-check</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
+<url>
     <loc>https://growthguysgrowth10.ca/guides/category-labels-evidence-boundary</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
@@ -923,6 +917,12 @@
   <url>
     <loc>https://growthguysgrowth10.ca/guides/growth-guys-promo-code-page-checklist</loc>
     <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://growthguysgrowth10.ca/guides/product-page-date-check</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
