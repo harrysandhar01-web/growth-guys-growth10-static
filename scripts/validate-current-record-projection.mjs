@@ -9,7 +9,7 @@ const displayDate = new Intl.DateTimeFormat("en-US", { timeZone: "America/Toront
 const pages = ["index.html","growth10/index.html","discount-codes/index.html","verification-archive/index.html","verification-history/index.html","how-we-verify/index.html"];
 for (const relative of pages) {
   const html = (await readFile(join(publicDir, relative), "utf8")).replace(/\$\s+/g, "$").replace(/\s+/g, " ");
-  for (const [label, value] of [["display date", displayDate],["product", record.product],["total", `$${record.total_cad} CAD`],["cart observation scope", "Documented pre-payment cart observation"]]) {
+  for (const [label, value] of [["display date", displayDate],["record reference", record.record_reference],["product", record.product],["total", `$${record.total_cad} CAD`],["cart observation scope", "Documented pre-payment cart observation"]]) {
     if (!html.includes(value)) throw new Error(`${relative}: current record ${label} missing: ${value}`);
   }
 }
