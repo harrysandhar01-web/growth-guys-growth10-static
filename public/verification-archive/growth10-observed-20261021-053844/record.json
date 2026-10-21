@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "status": "Verified at checkout.",
+  "record_id": "3210001",
+  "record_reference": "growth10-observed-20261021-053844",
+  "canonical_url": "https://growthguysgrowth10.ca/growth10#current-record",
+  "code": "GROWTH10",
+  "method": "Browser cart-only verification.",
+  "scope": "Documented pre-payment cart observation; no identity, address, payment, or purchase was submitted.",
+  "observed_at": "2026-10-21T05:38:44Z",
+  "observed_timezone": "America/Vancouver",
+  "published_at": "2026-10-21T05:38:44Z",
+  "product": "Retatrutide 10mg - Single vial",
+  "subtotal_cad": "90.00",
+  "discount_cad": "9.00",
+  "shipping_cad": "20.00",
+  "total_cad": "84.80",
+  "payment_method_selected": false,
+  "visible_other_adjustment": "Bitcoin Discount (20%)",
+  "evidence_url": "https://growthguysgrowth10.ca/verification-archive/growth10-observed-20261021-053844/",
+  "line_items": [
+    {
+      "product_name": "Retatrutide 10mg - Single vial",
+      "quantity": 1,
+      "unit_price_cad": "90.00",
+      "line_subtotal_cad": "90.00"
+    }
+  ]
+}
