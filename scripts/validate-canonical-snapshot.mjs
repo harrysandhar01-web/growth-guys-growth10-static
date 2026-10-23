@@ -19,6 +19,17 @@ if (!Array.isArray(manifest.dynamicControlPlaneExcluded) || manifest.dynamicCont
 }
 if (Object.keys(routeMap).length < manifest.canonicalSnapshot.publicRouteCount) throw new Error("route_map_incomplete");
 if ((sitemap.match(/<loc>/g) ?? []).length !== manifest.canonicalSnapshot.publicRouteCount) throw new Error("sitemap_count_mismatch");
+for (const match of sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+  const url = new URL(match[1]);
+  const route = decodeURIComponent(url.pathname).replace(/^\/+|\/+$/g, "");
+  if (!route || url.pathname.endsWith("/") || route.includes(".")) continue;
+  try {
+    await access(join(publicDir, route, "index.html"));
+    throw new Error(`sitemap_noncanonical_route:${url.pathname}`);
+  } catch (error) {
+    if (error?.message?.startsWith("sitemap_noncanonical_route:")) throw error;
+  }
+}
 for (const output of Object.values(routeMap)) {
   await access(join(publicDir, output.replace(/^\//, "")));
 }
