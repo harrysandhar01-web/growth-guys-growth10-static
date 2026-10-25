@@ -1,7 +1,7 @@
 {
   "/": "/index.html",
   "/about/": "/about/index.html",
-  "/api/current-record": "/api/current-record.json",
+  "/api/current-record": "/api/current-record",
   "/contact/": "/contact/index.html",
   "/discount-codes/": "/discount-codes/index.html",
   "/editorials/": "/editorials/index.html",
