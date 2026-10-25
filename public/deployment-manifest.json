@@ -161,7 +161,7 @@
     "/verification-feed.json": "/verification-feed.json",
     "/verification-history/": "/verification-history/index.html"
   },
-  "deploymentState": "static_projection_ready",
+  "deploymentState": "built_not_deployed",
   "canonicalSnapshot": {
     "generatedAt": "2026-10-19T16:19:11.000Z",
     "publicRouteCount": 149,
