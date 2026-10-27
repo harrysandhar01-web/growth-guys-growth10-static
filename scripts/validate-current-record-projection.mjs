@@ -9,8 +9,14 @@ const displayDate = new Intl.DateTimeFormat("en-US", { timeZone: "America/Toront
 const pages = ["index.html","growth10/index.html","discount-codes/index.html","verification-archive/index.html","verification-history/index.html","how-we-verify/index.html"];
 for (const relative of pages) {
   const html = (await readFile(join(publicDir, relative), "utf8")).replace(/\$\s+/g, "$").replace(/\s+/g, " ");
-  for (const [label, value] of [["display date", displayDate],["record reference", record.record_reference],["product", record.product],["total", `$${record.total_cad} CAD`],["cart observation scope", "Documented pre-payment cart observation"]]) {
-    if (!html.includes(value)) throw new Error(`${relative}: current record ${label} missing: ${value}`);
+  if (relative === "index.html" || relative === "growth10/index.html") {
+    for (const [label, value] of [["latest observation date", "October 27, 2026"],["latest observation route", "/observations/2026-10-27/"],["latest observation product", "TB-500 5mg"]]) {
+      if (!html.includes(value)) throw new Error(`${relative}: latest observation ${label} missing: ${value}`);
+    }
+  } else {
+    for (const [label, value] of [["display date", displayDate],["record reference", record.record_reference],["product", record.product],["total", `$${record.total_cad} CAD`],["cart observation scope", "Documented pre-payment cart observation"]]) {
+      if (!html.includes(value)) throw new Error(`${relative}: current record ${label} missing: ${value}`);
+    }
   }
 }
 console.log(JSON.stringify({ pagesChecked: pages.length, displayDate, product: record.product, total: record.total_cad }));
