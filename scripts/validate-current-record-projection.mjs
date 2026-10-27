@@ -10,7 +10,7 @@ const pages = ["index.html","growth10/index.html","discount-codes/index.html","v
 for (const relative of pages) {
   const html = (await readFile(join(publicDir, relative), "utf8")).replace(/\$\s+/g, "$").replace(/\s+/g, " ");
   if (relative === "index.html" || relative === "growth10/index.html") {
-    for (const [label, value] of [["latest observation date", "October 27, 2026"],["latest observation route", "/observations/2026-10-27/"],["latest observation product", "TB-500 5mg"]]) {
+    for (const [label, value] of [["current record reference", record.record_reference],["current code", record.code]]) {
       if (!html.includes(value)) throw new Error(`${relative}: latest observation ${label} missing: ${value}`);
     }
   } else {
