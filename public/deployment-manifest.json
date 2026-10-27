@@ -164,12 +164,12 @@
   "deploymentState": "built_not_deployed",
   "canonicalSnapshot": {
     "generatedAt": "2026-10-19T16:19:11.000Z",
-    "publicRouteCount": 150,
+    "publicRouteCount": 151,
     "publicAssetCount": 31,
     "currentRecordReference": "growth10-observed-20261019-145508",
     "currentRecordObservedAt": "2026-10-19T14:55:08Z",
     "sourceOrigin": "https://growthguysgrowth10.ca",
-    "sitemapUrlCount": 150
+    "sitemapUrlCount": 151
   },
   "dynamicControlPlaneExcluded": [
     "owner authentication",
