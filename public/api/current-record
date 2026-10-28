@@ -1,12 +1,12 @@
 {
   "version": "1.0",
-  "status": "Verified at checkout.",
-  "record_reference": "growth10-observed-20261025-1343edt-approx",
+  "status": "Verified at checkout",
+  "record_reference": "growth10-owner-20261027134300-40619728162",
   "canonical_url": "https://growthguysgrowth10.ca/growth10#current-record",
   "code": "GROWTH10",
-  "method": "Browser cart-only verification.",
-  "scope": "Documented pre-payment cart observation; no identity, address, payment, or purchase was submitted.",
-  "observed_at": "2026-10-25T13:43Z",
+  "method": "Owner-attested cart-only evidence",
+  "scope": "Documented pre-payment cart observation; no order was made.",
+  "observed_at": "2026-10-27T13:43:00.000Z",
   "observed_time_precision": "minute (approximately 9:43 a.m. EDT)",
   "observed_timezone": "America/Toronto",
   "published_at": "2026-10-25T18:25:00Z",
@@ -17,7 +17,7 @@
   "shipping_cad": "not observed",
   "total_cad": "36.00",
   "payment_method_selected": false,
-  "evidence_url": "https://growthguysgrowth10.ca/verification-archive/growth10-observed-20261025-1343edt-approx/",
+  "evidence_url": "/observations/2026-10-27/",
   "line_items": [
     {
       "product_name": "TB-500 5mg - Single vial",
@@ -25,5 +25,11 @@
       "unit_price_cad": "40.00",
       "line_subtotal_cad": "40.00"
     }
-  ]
+  ],
+  "record_url": "/owner-records/growth10-owner-20261027134300-40619728162/",
+  "product_name": "TB-500 5mg - Single vial",
+  "cart_subtotal": "40.00",
+  "discount_amount": "4.00",
+  "observed_total": "36.00",
+  "source_record_reference": "growth10-observed-20261025-1343edt-approx"
 }
