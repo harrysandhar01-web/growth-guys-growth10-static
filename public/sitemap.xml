@@ -675,7 +675,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://growthguysgrowth10.ca/guides/growth10-observation-time-vs-publication-time/</loc>
+    <loc>https://growthguysgrowth10.ca/guides/growth10-record-time-vs-publication-time/</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -873,7 +873,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://growthguysgrowth10.ca/guides/growth10-cart-observation-public-record/</loc>
+    <loc>https://growthguysgrowth10.ca/guides/growth10-cart-record-public-record/</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -927,4 +927,4 @@
     <priority>0.7</priority>
   </url>
 <url><loc>https://growthguysgrowth10.ca/verification-archive/growth10-observed-20261022-040945/</loc></url><url><loc>https://growthguysgrowth10.ca/verification-archive/growth10-observed-20261023-040726/</loc></url>  <url><loc>https://growthguysgrowth10.ca/guides/growth10-archive-calendar-reader-guide/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://growthguysgrowth10.ca/observations/2026-10-27/</loc><lastmod>2026-10-27</lastmod></url><url><loc>https://growthguysgrowth10.ca/owner-records/growth10-owner-20261027134300-40619728162/</loc><lastmod>2026-10-28</lastmod></url><url><loc>https://growthguysgrowth10.ca/owner-records/growth10-owner-20261029040700-40816751323/</loc><lastmod>2026-10-29</lastmod></url></urlset>
+<url><loc>https://growthguysgrowth10.ca/records/2026-10-27/</loc><lastmod>2026-10-27</lastmod></url><url><loc>https://growthguysgrowth10.ca/owner-records/growth10-verified-20261027134300-40619728162/</loc><lastmod>2026-10-28</lastmod></url><url><loc>https://growthguysgrowth10.ca/owner-records/growth10-verified-20261029040700-40816751323/</loc><lastmod>2026-10-29</lastmod></url></urlset>

@@ -3,13 +3,13 @@
   "profile": "growth10",
   "code": "GROWTH10",
   "mode": "new",
-  "recordReference": "growth10-owner-20261027134300-40619728162",
+  "recordReference": "growth10-verified-20261027134300-40619728162",
   "sourceRecordReference": "growth10-observed-20261025-1343edt-approx",
   "previousObservedAt": "2026-10-25T13:43Z",
   "observedAt": "2026-10-27T13:43:00.000Z",
   "owner": "harrysandhar01-web",
   "reason": "Publish the accepted October 27 cart record and replace the stuck October 25 current projection.",
-  "originalEvidence": "/observations/2026-10-27/",
+  "originalEvidence": "/records/2026-10-27/",
   "publishedByRun": "40619728162",
   "submittedAt": "2026-10-28T02:14:27.089Z"
 }

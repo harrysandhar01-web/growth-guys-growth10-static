@@ -3,32 +3,32 @@
   "title": "GROWTH10 Verification Desk verification records",
   "home_page_url": "https://growthguysgrowth10.ca/growth10",
   "feed_url": "https://growthguysgrowth10.ca/verification-feed.json",
-  "description": "Current and historical successful GROWTH10 pre-payment cart observations.",
+  "description": "Current and historical successful GROWTH10 pre-payment verified checkout records.",
   "items": [
     {
-      "id": "growth10-owner-20261029040700-40816751323",
-      "url": "https://growthguysgrowth10.ca/owner-records/growth10-owner-20261029040700-40816751323/",
-      "title": "GROWTH10 owner-approved cart observation",
+      "id": "growth10-verified-20261029040700-40816751323",
+      "url": "https://growthguysgrowth10.ca/owner-records/growth10-verified-20261029040700-40816751323/",
+      "title": "GROWTH10 verified checkout record",
       "date_published": "2026-10-29T04:07:00.000Z",
       "date_modified": "2026-10-29T04:15:56.475Z",
       "content_text": "Semaglutide 5mg - Single vial: GROWTH10 reduced a CAD 50.00 cart by CAD 5.00 to CAD 45.00. No purchase was made.",
       "attachments": [
         {
-          "url": "https://growthguysgrowth10.ca/observations/2026-10-29/",
+          "url": "https://growthguysgrowth10.ca/records/2026-10-29/",
           "title": "Documented original evidence"
         }
       ]
     },
     {
-      "id": "growth10-owner-20261027134300-40619728162",
-      "url": "https://growthguysgrowth10.ca/owner-records/growth10-owner-20261027134300-40619728162/",
-      "title": "GROWTH10 owner-approved cart observation",
+      "id": "growth10-verified-20261027134300-40619728162",
+      "url": "https://growthguysgrowth10.ca/owner-records/growth10-verified-20261027134300-40619728162/",
+      "title": "GROWTH10 verified checkout record",
       "date_published": "2026-10-27T13:43:00.000Z",
       "date_modified": "2026-10-28T02:14:27.089Z",
       "content_text": "TB-500 5mg - Single vial: GROWTH10 reduced a CAD 40.00 cart by CAD 4.00 to CAD 36.00. No purchase was made.",
       "attachments": [
         {
-          "url": "https://growthguysgrowth10.ca/observations/2026-10-27/",
+          "url": "https://growthguysgrowth10.ca/records/2026-10-27/",
           "title": "Documented original evidence"
         }
       ]
@@ -36,18 +36,18 @@
     {
       "id": "growth10-history-1170001",
       "url": "https://growthguysgrowth10.ca/verification-archive/1170001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-10T07:32:57.000Z",
       "date_modified": "2026-09-10T07:32:57.000Z",
-      "content_text": "Tirzepatide 10mg - Single vial ×2: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $120.00 to $108.00 with a $12.00 observed reduction before payment."
+      "content_text": "Tirzepatide 10mg - Single vial ×2: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $120.00 to $108.00 with a $12.00 observed reduction before payment."
     },
     {
       "id": "growth10-history-1260001",
       "url": "https://growthguysgrowth10.ca/verification-archive/1260001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-12T07:20:17.000Z",
       "date_modified": "2026-09-12T07:20:17.000Z",
-      "content_text": "Tirzepatide 10mg - Single vial ×1: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $60.00 to $54.00 with a $6.00 observed reduction before payment.",
+      "content_text": "Tirzepatide 10mg - Single vial ×1: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $60.00 to $54.00 with a $6.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-09-12/growth10-automated-cart_e945e2bc.webp",
@@ -59,10 +59,10 @@
     {
       "id": "growth10-history-1350001",
       "url": "https://growthguysgrowth10.ca/verification-archive/1350001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-13T09:13:27.000Z",
       "date_modified": "2026-09-13T09:13:27.000Z",
-      "content_text": "GHK-Cu 100mg - Single vial x1: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $55.00 to $49.50 with a $5.50 observed reduction before payment.",
+      "content_text": "GHK-Cu 100mg - Single vial x1: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $55.00 to $49.50 with a $5.50 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-09-13/growth10-ghk-cu-automated-cart_a4bbfa6a.webp",
@@ -74,10 +74,10 @@
     {
       "id": "growth10-history-1380001",
       "url": "https://growthguysgrowth10.ca/verification-archive/1380001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-14T07:33:55.000Z",
       "date_modified": "2026-09-14T07:33:55.000Z",
-      "content_text": "GHK-Cu 100mg - Single vial ×2: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $110.00 to $99.00 with a $11.00 observed reduction before payment.",
+      "content_text": "GHK-Cu 100mg - Single vial ×2: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $110.00 to $99.00 with a $11.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-09-14/growth10-manual-cart_2137832f.webp",
@@ -89,10 +89,10 @@
     {
       "id": "growth10-history-1410001",
       "url": "https://growthguysgrowth10.ca/verification-archive/1410001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-15T04:28:19.000Z",
       "date_modified": "2026-09-15T04:28:19.000Z",
-      "content_text": "GHK-Cu 100mg - Single vial and Tirzepatide 10mg - Single vial: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $170.00 to $153.00 with a $17.00 observed reduction before payment.",
+      "content_text": "GHK-Cu 100mg - Single vial and Tirzepatide 10mg - Single vial: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $170.00 to $153.00 with a $17.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-09-15/growth10-manual-cart_6443fbe9.webp",
@@ -104,10 +104,10 @@
     {
       "id": "growth10-history-1470001",
       "url": "https://growthguysgrowth10.ca/verification-archive/1470001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-16T08:59:40.000Z",
       "date_modified": "2026-09-16T08:59:40.000Z",
-      "content_text": "RETATRUTIDE 20MG - SINGLE VIAL: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $150.00 to $135.00 with a $15.00 observed reduction before payment.",
+      "content_text": "RETATRUTIDE 20MG - SINGLE VIAL: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $150.00 to $135.00 with a $15.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-09-16/growth10-automated-cart_3dce5b12.png",
@@ -119,10 +119,10 @@
     {
       "id": "growth10-history-1500001",
       "url": "https://growthguysgrowth10.ca/verification-archive/1500001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-17T04:48:26.000Z",
       "date_modified": "2026-09-17T04:48:26.000Z",
-      "content_text": "GHK-CU 100MG - SINGLE VIAL: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $55.00 to $49.50 with a $5.50 observed reduction before payment.",
+      "content_text": "GHK-CU 100MG - SINGLE VIAL: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $55.00 to $49.50 with a $5.50 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-09-17/growth10-automated-cart_72cbce57.png",
@@ -134,10 +134,10 @@
     {
       "id": "growth10-history-1530001",
       "url": "https://growthguysgrowth10.ca/verification-archive/1530001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-18T04:58:00.000Z",
       "date_modified": "2026-09-18T04:58:00.000Z",
-      "content_text": "RETATRUTIDE 30MG - SINGLE VIAL: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $200.00 to $180.00 with a $20.00 observed reduction before payment.",
+      "content_text": "RETATRUTIDE 30MG - SINGLE VIAL: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $200.00 to $180.00 with a $20.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-09-18/growth10-independent-cart_4a1ea57d.webp",
@@ -149,10 +149,10 @@
     {
       "id": "growth10-history-1620001",
       "url": "https://growthguysgrowth10.ca/verification-archive/1620001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-19T13:18:26.000Z",
       "date_modified": "2026-09-19T13:18:26.000Z",
-      "content_text": "RETATRUTIDE 30MG - SINGLE VIAL: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $200.00 to $180.00 with a $20.00 observed reduction before payment.",
+      "content_text": "RETATRUTIDE 30MG - SINGLE VIAL: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $200.00 to $180.00 with a $20.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-09-19/growth10-automated-cart_370a307e.webp",
@@ -164,10 +164,10 @@
     {
       "id": "growth10-history-1650001",
       "url": "https://growthguysgrowth10.ca/verification-archive/1650001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-20T05:20:21.000Z",
       "date_modified": "2026-09-20T05:20:21.000Z",
-      "content_text": "RETATRUTIDE 30MG - SINGLE VIAL: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $200.00 to $180.00 with a $20.00 observed reduction before payment.",
+      "content_text": "RETATRUTIDE 30MG - SINGLE VIAL: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $200.00 to $180.00 with a $20.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-09-20/growth10-automated-cart_a41c5ad9.webp",
@@ -179,10 +179,10 @@
     {
       "id": "growth10-history-1680001",
       "url": "https://growthguysgrowth10.ca/verification-archive/1680001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-21T04:25:58.000Z",
       "date_modified": "2026-09-21T04:25:58.000Z",
-      "content_text": "RETATRUTIDE 30MG - SINGLE VIAL: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $200.00 to $180.00 with a $20.00 observed reduction before payment.",
+      "content_text": "RETATRUTIDE 30MG - SINGLE VIAL: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $200.00 to $180.00 with a $20.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-09-21/growth10-automated-cart_c1ae96d9.webp",
@@ -194,10 +194,10 @@
     {
       "id": "growth10-history-1710001",
       "url": "https://growthguysgrowth10.ca/verification-archive/1710001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-22T06:41:52.000Z",
       "date_modified": "2026-09-22T06:41:52.000Z",
-      "content_text": "RETATRUTIDE 30MG - SINGLE VIAL: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $200.00 to $180.00 with a $20.00 observed reduction before payment.",
+      "content_text": "RETATRUTIDE 30MG - SINGLE VIAL: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $200.00 to $180.00 with a $20.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-09-22/growth10-automated-cart_5cb4cb62.webp",
@@ -209,10 +209,10 @@
     {
       "id": "growth10-history-1770001",
       "url": "https://growthguysgrowth10.ca/verification-archive/1770001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-23T04:35:24.000Z",
       "date_modified": "2026-09-23T04:35:24.000Z",
-      "content_text": "GHK-Cu 100mg - Single vial: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $55.00 to $49.50 with a $5.50 observed reduction before payment.",
+      "content_text": "GHK-Cu 100mg - Single vial: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $55.00 to $49.50 with a $5.50 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-09-23/growth10-independent-manual-guest-cart_e5ce3a7a.webp",
@@ -224,10 +224,10 @@
     {
       "id": "growth10-history-1890001",
       "url": "https://growthguysgrowth10.ca/verification-archive/1890001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-24T10:27:09.000Z",
       "date_modified": "2026-09-24T10:27:09.000Z",
-      "content_text": "TB-500 5mg - Single vial: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $40.00 to $36.00 with a $4.00 observed reduction before payment.",
+      "content_text": "TB-500 5mg - Single vial: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $40.00 to $36.00 with a $4.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-09-24/growth10-fresh-tb500-cart_41cd8fb1.webp",
@@ -239,10 +239,10 @@
     {
       "id": "growth10-history-1950001",
       "url": "https://growthguysgrowth10.ca/verification-archive/1950001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-25T05:28:01.000Z",
       "date_modified": "2026-09-25T05:28:01.000Z",
-      "content_text": "Aromasin (Exemestane) Tablets 12.5mg: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $70.00 to $63.00 with a $7.00 observed reduction before payment.",
+      "content_text": "Aromasin (Exemestane) Tablets 12.5mg: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $70.00 to $63.00 with a $7.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-09-25/growth10-clean-browser-aromasin-cart_974ec353.webp",
@@ -254,10 +254,10 @@
     {
       "id": "growth10-history-2010001",
       "url": "https://growthguysgrowth10.ca/verification-archive/2010001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-26T05:13:34.000Z",
       "date_modified": "2026-09-26T05:13:34.000Z",
-      "content_text": "5-Amino-1MQ 50mg Tablets: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $90.00 to $81.00 with a $9.00 observed reduction before payment.",
+      "content_text": "5-Amino-1MQ 50mg Tablets: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $90.00 to $81.00 with a $9.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-09-26/growth10-manual-20260926-011334-16ba39e8-cart_ac1d5af8.webp",
@@ -269,10 +269,10 @@
     {
       "id": "growth10-history-2070001",
       "url": "https://growthguysgrowth10.ca/verification-archive/2070001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-27T05:31:38.000Z",
       "date_modified": "2026-09-27T05:31:38.000Z",
-      "content_text": "Semaglutide 5mg - Single vial: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $50.00 to $45.00 with a $5.00 observed reduction before payment.",
+      "content_text": "Semaglutide 5mg - Single vial: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $50.00 to $45.00 with a $5.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-09-27/growth10-2026-09-27-manual-semaglutide-5mg-pass-cart_7f2e8d93.webp",
@@ -284,10 +284,10 @@
     {
       "id": "growth10-history-2160001",
       "url": "https://growthguysgrowth10.ca/verification-archive/2160001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-09-28T06:55:10.000Z",
       "date_modified": "2026-09-28T06:55:10.000Z",
-      "content_text": "Aromasin (Exemestane) Tablets 12.5mg: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $70.00 to $83.00 with a $7.00 observed reduction before payment. Shipping: $20.00 CAD.",
+      "content_text": "Aromasin (Exemestane) Tablets 12.5mg: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $70.00 to $83.00 with a $7.00 observed reduction before payment. Shipping: $20.00 CAD.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-09-28/growth10-20260928-025510EDT-manual-code-cart-69a2921a1d-cart_876272f1.webp",
@@ -299,10 +299,10 @@
     {
       "id": "growth10-history-2400001",
       "url": "https://growthguysgrowth10.ca/verification-archive/2400001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-10-04T07:57:13.000Z",
       "date_modified": "2026-10-04T07:57:13.000Z",
-      "content_text": "BPC-157 10mg - Single vial: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $70.00 to $63.00 with a $7.00 observed reduction before payment.",
+      "content_text": "BPC-157 10mg - Single vial: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $70.00 to $63.00 with a $7.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-10-04/growth10-independent-cart_ab65ed3a.png",
@@ -314,10 +314,10 @@
     {
       "id": "growth10-history-2520001",
       "url": "https://growthguysgrowth10.ca/verification-archive/2520001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-10-05T04:08:48.000Z",
       "date_modified": "2026-10-05T04:08:48.000Z",
-      "content_text": "TB-500 5mg - Single vial: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $40.00 to $36.00 with a $4.00 observed reduction before payment.",
+      "content_text": "TB-500 5mg - Single vial: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $40.00 to $36.00 with a $4.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-10-05/growth10-independent-cart_c1d803e8.png",
@@ -329,10 +329,10 @@
     {
       "id": "growth10-history-2640001",
       "url": "https://growthguysgrowth10.ca/verification-archive/2640001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-10-07T06:57:14.000Z",
       "date_modified": "2026-10-07T06:57:14.000Z",
-      "content_text": "HGH – Batch GGC38 280iu Kit: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $280.00 to $252.00 with a $28.00 observed reduction before payment.",
+      "content_text": "HGH – Batch GGC38 280iu Kit: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $280.00 to $252.00 with a $28.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-10-07/growth10-independent-cart_e6aeea9f.png",
@@ -344,10 +344,10 @@
     {
       "id": "growth10-history-2760001",
       "url": "https://growthguysgrowth10.ca/verification-archive/2760001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-10-08T06:59:34.000Z",
       "date_modified": "2026-10-08T06:59:34.000Z",
-      "content_text": "Semaglutide 5mg - Single vial: Verified at checkout. Documented pre-payment cart observation; no purchase was made. $50.00 to $45.00 with a $5.00 observed reduction before payment.",
+      "content_text": "Semaglutide 5mg - Single vial: Verified at checkout. Documented pre-payment checkout record; no purchase was made. $50.00 to $45.00 with a $5.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-10-08/growth10-independent-cart_4567601c.png",
@@ -359,10 +359,10 @@
     {
       "id": "growth10-history-2820001",
       "url": "https://growthguysgrowth10.ca/verification-archive/2820001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-10-09T07:25:33.697Z",
       "date_modified": "2026-10-09T07:25:33.697Z",
-      "content_text": "Tesamorelin 10mg - Single vial (qty 1) + BPC-157 10mg - Single vial (qty 1): Verified at checkout. Documented pre-payment cart observation; no purchase was made. Items: Tesamorelin 10mg - Single vial × 1 at $90.00 CAD each ($90.00 CAD line total); BPC-157 10mg - Single vial × 1 at $60.00 CAD each ($60.00 CAD line total). $150.00 to $135.00 with a $15.00 observed reduction before payment.",
+      "content_text": "Tesamorelin 10mg - Single vial (qty 1) + BPC-157 10mg - Single vial (qty 1): Verified at checkout. Documented pre-payment checkout record; no purchase was made. Items: Tesamorelin 10mg - Single vial × 1 at $90.00 CAD each ($90.00 CAD line total); BPC-157 10mg - Single vial × 1 at $60.00 CAD each ($60.00 CAD line total). $150.00 to $135.00 with a $15.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-10-09/growth10-cart-0-cart_totals_7a32eb43.jpg",
@@ -384,10 +384,10 @@
     {
       "id": "growth10-history-2880001",
       "url": "https://growthguysgrowth10.ca/verification-archive/2880001",
-      "title": "Historical GROWTH10 cart observation — Verified at checkout.",
+      "title": "Historical GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-10-10T06:06:01.349Z",
       "date_modified": "2026-10-10T06:06:01.349Z",
-      "content_text": "SS-31 50mg - Single vial (qty 1): Verified at checkout. Documented pre-payment cart observation; no purchase was made. Items: SS-31 50mg - Single vial × 1 at $150.00 CAD each ($150.00 CAD line total). $150.00 to $135.00 with a $15.00 observed reduction before payment.",
+      "content_text": "SS-31 50mg - Single vial (qty 1): Verified at checkout. Documented pre-payment checkout record; no purchase was made. Items: SS-31 50mg - Single vial × 1 at $150.00 CAD each ($150.00 CAD line total). $150.00 to $135.00 with a $15.00 observed reduction before payment.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-10-10/growth10-cart-1-cart_totals_3b4921ab.jpg",
@@ -404,10 +404,10 @@
     {
       "id": "growth10-current-3090001",
       "url": "https://growthguysgrowth10.ca/growth10#current-record",
-      "title": "Current GROWTH10 cart observation — Verified at checkout.",
+      "title": "Current GROWTH10 checkout record — Verified at checkout.",
       "date_published": "2026-10-13T15:16:29.000Z",
       "date_modified": "2026-10-13T15:16:29.000Z",
-      "content_text": "Status: Verified at checkout. Documented pre-payment cart observation; no purchase was made. Date/time: October 13, 2026 · 11:07 a.m. EDT. Code: GROWTH10. Basket: Tirzepatide 10mg - Single vial. Subtotal: $60.00 CAD. Discount: −$6.00 CAD. Total: $54.00 CAD. Original screenshot: retained in verification history.",
+      "content_text": "Status: Verified at checkout. Documented pre-payment checkout record; no purchase was made. Date/time: October 13, 2026 · 11:07 a.m. EDT. Code: GROWTH10. Basket: Tirzepatide 10mg - Single vial. Subtotal: $60.00 CAD. Discount: −$6.00 CAD. Total: $54.00 CAD. Original screenshot: retained in verification history.",
       "attachments": [
         {
           "url": "https://growthguysgrowth10.ca/manus-storage/verification-events/2026-10-13/growth10-independent-cart_343923be.png",
@@ -419,7 +419,7 @@
     {
       "id": "growth10-observed-20261018-230648",
       "url": "https://growthguysgrowth10.ca/verification-archive/growth10-observed-20261018-230648/",
-      "title": "Owner-reviewed GROWTH10 cart observation — no purchase made.",
+      "title": "Owner-reviewed GROWTH10 checkout record — no purchase made.",
       "date_published": "2026-10-18T23:06:48.489Z",
       "date_modified": "2026-10-18T23:06:48.489Z",
       "content_text": "Aromasin (Exemestane) Tablets 12.5mg: GROWTH10 visible in cart. CAD 70.00 subtotal, CAD 7.00 code reduction, CAD 70.40 displayed total; no payment method selected and no purchase was made."
@@ -427,15 +427,15 @@
     {
       "id": "growth10-observed-20261019-145508",
       "url": "https://growthguysgrowth10.ca/verification-archive/growth10-observed-20261019-145508",
-      "title": "Owner-approved GROWTH10 cart observation — GHK-Cu 100mg - Single vial",
+      "title": "Verified GROWTH10 checkout record — GHK-Cu 100mg - Single vial",
       "date_published": "2026-10-19T14:55:08Z",
       "date_modified": "2026-10-19T14:55:08Z",
-      "content_text": "GHK-Cu 100mg - Single vial ×1: GROWTH10 cart-only observation. CAD $55.00 to $59.60 with a CAD $15.40 observed reduction before payment; no purchase was made."
+      "content_text": "GHK-Cu 100mg - Single vial ×1: GROWTH10 verified at checkout record. CAD $55.00 to $59.60 with a CAD $15.40 observed reduction before payment; no purchase was made."
     },
     {
       "id": "growth10-observed-20261020-114933",
       "url": "https://growthguysgrowth10.ca/verification-archive/growth10-observed-20261020-114933/",
-      "title": "Verified GROWTH10 cart observation — Aromasin (Exemestane) Tablets 12.5mg",
+      "title": "Verified GROWTH10 checkout record — Aromasin (Exemestane) Tablets 12.5mg",
       "date_published": "2026-10-20T11:49:33Z",
       "date_modified": "2026-10-20T11:49:33Z",
       "content_text": "Aromasin (Exemestane) Tablets 12.5mg: GROWTH10 visible in cart. CAD 70.00 subtotal, CAD 7.00 code reduction, CAD 70.40 displayed total; no payment method selected and no purchase was made."
@@ -443,7 +443,7 @@
     {
       "id": "growth10-observed-20261021-053844",
       "url": "https://growthguysgrowth10.ca/verification-archive/growth10-observed-20261021-053844/",
-      "title": "Verified GROWTH10 cart observation — Retatrutide 10mg - Single vial",
+      "title": "Verified GROWTH10 checkout record — Retatrutide 10mg - Single vial",
       "date_published": "2026-10-21T05:38:44Z",
       "date_modified": "2026-10-21T05:38:44Z",
       "content_text": "Retatrutide 10mg - Single vial: GROWTH10 visible in cart. CAD 90.00 subtotal, CAD 9.00 code reduction, CAD 84.80 displayed total; no payment method selected and no purchase was made."
@@ -451,7 +451,7 @@
     {
       "id": "growth10-observed-20261022-040945",
       "url": "https://growthguysgrowth10.ca/verification-archive/growth10-observed-20261022-040945/",
-      "title": "Verified GROWTH10 cart observation — BPC-157 10mg - Single vial",
+      "title": "Verified GROWTH10 checkout record — BPC-157 10mg - Single vial",
       "date_published": "2026-10-22T04:09:45Z",
       "date_modified": "2026-10-22T04:09:45Z",
       "content_text": "BPC-157 10mg - Single vial: GROWTH10 visible in cart. CAD 60.00 subtotal, CAD 6.00 code reduction, CAD 43.20 displayed total; no payment method selected and no purchase was made."
@@ -459,7 +459,7 @@
     {
       "id": "growth10-observed-20261023-040726",
       "url": "https://growthguysgrowth10.ca/verification-archive/growth10-observed-20261023-040726/",
-      "title": "Verified GROWTH10 cart observation — TB-500 5mg - Single vial",
+      "title": "Verified GROWTH10 checkout record — TB-500 5mg - Single vial",
       "date_published": "2026-10-23T04:07:26.795Z",
       "date_modified": "2026-10-23T04:07:26.795Z",
       "content_text": "TB-500 5mg - Single vial: GROWTH10 visible in cart. CAD 40.00 subtotal, CAD 4.00 code reduction, CAD 28.80 displayed total; no payment method selected and no purchase was made."
@@ -467,7 +467,7 @@
     {
       "id": "growth10-observed-20261025-1343edt-approx",
       "url": "https://growthguysgrowth10.ca/verification-archive/growth10-observed-20261025-1343edt-approx/",
-      "title": "Verified GROWTH10 cart observation — TB-500 5mg - Single vial",
+      "title": "Verified GROWTH10 checkout record — TB-500 5mg - Single vial",
       "date_published": "2026-10-25T13:43:00Z",
       "date_modified": "2026-10-25T18:25:00Z",
       "content_text": "TB-500 5mg - Single vial: GROWTH10 visible in cart at approximately 9:43 a.m. EDT. CAD 40.00 subtotal, CAD 4.00 code reduction, CAD 36.00 displayed total; no payment method selected and no purchase was made."
