@@ -45,6 +45,9 @@ for (const relative of pages) {
 const currentBlockPattern = /<section\b[^>]*(?:current-record-refresh|current-verification-banner|verification-record-summary|current-verification-summary-title)[^>]*>[\s\S]*?<\/section>/gi;
 for (const relative of pages) {
   const html = (await readFile(join(publicDir, relative), "utf8")).replace(/\s+/g, " ");
+  if (/Current documented record[^<]{0,220}October 27, 2026|Latest GROWTH10 verified checkout record[^<]{0,220}October 27, 2026/i.test(html)) {
+    throw new Error(`${relative}: stale October 27 current metadata`);
+  }
   for (const block of html.match(currentBlockPattern) ?? []) {
     if (/\bCurrent\b|\bLatest\b/i.test(block) && !block.includes(displayDate)) {
       throw new Error(`${relative}: stale dated current projection`);
