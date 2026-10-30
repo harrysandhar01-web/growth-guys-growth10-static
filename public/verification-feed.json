@@ -6,6 +6,20 @@
   "description": "Current and historical successful GROWTH10 pre-payment verified checkout records.",
   "items": [
     {
+      "id": "growth10-owner-20261030040700-41001339426",
+      "url": "https://growthguysgrowth10.ca/owner-records/growth10-owner-20261030040700-41001339426/",
+      "title": "GROWTH10 owner-approved cart observation",
+      "date_published": "2026-10-30T04:07:00.000Z",
+      "date_modified": "2026-10-30T04:09:57.992Z",
+      "content_text": "Semaglutide 5mg single vial: GROWTH10 reduced a CAD 50.00 cart by CAD 5.00 to CAD 45.00. No purchase was made.",
+      "attachments": [
+        {
+          "url": "https://growthguysgrowth10.ca/observations/2026-10-30/",
+          "title": "Documented original evidence"
+        }
+      ]
+    },
+    {
       "id": "growth10-verified-20261029040700-40816751323",
       "url": "https://growthguysgrowth10.ca/owner-records/growth10-verified-20261029040700-40816751323/",
       "title": "GROWTH10 verified checkout record",

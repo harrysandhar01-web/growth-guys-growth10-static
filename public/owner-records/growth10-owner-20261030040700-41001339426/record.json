@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "status": "Verified at checkout",
+  "record_reference": "growth10-owner-20261030040700-41001339426",
+  "canonical_url": "https://growthguysgrowth10.ca/growth10#current-record",
+  "code": "GROWTH10",
+  "method": "Owner-attested cart-only evidence",
+  "scope": "Documented pre-payment cart observation; no order was made.",
+  "observed_at": "2026-10-30T04:07:00.000Z",
+  "observed_time_precision": "minute (approximately 9:43 a.m. EDT)",
+  "observed_timezone": "America/Toronto",
+  "published_at": "2026-10-25T18:25:00Z",
+  "product": "Semaglutide 5mg single vial",
+  "product_url": "https://growthguys.com/shop/tb-500/?attribute_pa_packaging=single-vial",
+  "subtotal_cad": "50.00",
+  "discount_cad": "5.00",
+  "shipping_cad": "not observed",
+  "total_cad": "45.00",
+  "payment_method_selected": false,
+  "evidence_url": "/observations/2026-10-30/",
+  "line_items": [
+    {
+      "product_name": "TB-500 5mg - Single vial",
+      "quantity": 1,
+      "unit_price_cad": "40.00",
+      "line_subtotal_cad": "40.00"
+    }
+  ],
+  "record_url": "/owner-records/growth10-owner-20261030040700-41001339426/",
+  "product_name": "Semaglutide 5mg single vial",
+  "cart_subtotal": "50.00",
+  "discount_amount": "5.00",
+  "observed_total": "45.00",
+  "source_record_reference": "growth10-verified-20261029040700-40816751323"
+}

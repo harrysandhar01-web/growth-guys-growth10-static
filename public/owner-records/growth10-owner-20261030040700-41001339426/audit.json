@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "profile": "growth10",
+  "code": "GROWTH10",
+  "mode": "new",
+  "recordReference": "growth10-owner-20261030040700-41001339426",
+  "sourceRecordReference": "growth10-verified-20261029040700-40816751323",
+  "previousObservedAt": "2026-10-29T04:07:00.000Z",
+  "observedAt": "2026-10-30T04:07:00.000Z",
+  "owner": "harrysandhar01-web",
+  "reason": "Publish the new October 30 GROWTH10 cart result from retained browser evidence.",
+  "originalEvidence": "/observations/2026-10-30/",
+  "publishedByRun": "41001339426",
+  "submittedAt": "2026-10-30T04:09:57.992Z"
+}
