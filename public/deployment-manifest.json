@@ -5,7 +5,7 @@
   "canonicalOrigin": "https://growthguysgrowth10.ca",
   "generatedAt": "2026-10-30T04:09:57.992Z",
   "source": "canonical_public_html_snapshot",
-  "eventKey": "growth10-verified-20261030040700-41001339426",
+  "eventKey": "growth10-owner-20261030040700-41001339426",
   "recordPublishedAt": "2026-10-30T04:09:57.992Z",
   "staticRoutes": {
     "/": "/index.html",
@@ -109,7 +109,7 @@
     "/guides/growth10-verification-timestamp-matters/": "/guides/growth10-verification-timestamp-matters/index.html",
     "/guides/growth10-verification-trail/": "/guides/growth10-verification-trail/index.html",
     "/guides/growth10-verification-vs-coupon-listing/": "/guides/growth10-verification-vs-coupon-listing/index.html",
-    "/guides/growth10-verified-at-checkout-meaning/": "/guides/growth10-verified-at-checkout-meaning/index.html",
+    "/guides/growth10-owner-at-checkout-meaning/": "/guides/growth10-owner-at-checkout-meaning/index.html",
     "/guides/how-to-read-growth10-verification-record/": "/guides/how-to-read-growth10-verification-record/index.html",
     "/guides/inaccessible-report-fields/": "/guides/inaccessible-report-fields/index.html",
     "/guides/janoshik-link-source-boundary/": "/guides/janoshik-link-source-boundary/index.html",

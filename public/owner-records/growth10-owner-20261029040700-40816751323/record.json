@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "status": "Verified at checkout",
-  "record_reference": "growth10-verified-20261029040700-40816751323",
+  "record_reference": "growth10-owner-20261029040700-40816751323",
   "canonical_url": "https://growthguysgrowth10.ca/growth10#current-record",
   "code": "GROWTH10",
   "method": "Verified at checkout",
@@ -26,10 +26,10 @@
       "line_subtotal_cad": "40.00"
     }
   ],
-  "record_url": "/owner-records/growth10-verified-20261029040700-40816751323/",
+  "record_url": "/owner-records/growth10-owner-20261029040700-40816751323/",
   "product_name": "Semaglutide 5mg - Single vial",
   "cart_subtotal": "50.00",
   "discount_amount": "5.00",
   "observed_total": "45.00",
-  "source_record_reference": "growth10-verified-20261027134300-40619728162"
+  "source_record_reference": "growth10-owner-20261027134300-40619728162"
 }
