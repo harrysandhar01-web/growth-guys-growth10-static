@@ -11,21 +11,12 @@
   "observed_timezone": "America/Toronto",
   "published_at": "2026-10-25T18:25:00Z",
   "product": "Retatrutide 10mg single vial",
-  "product_url": "https://growthguys.com/shop/tb-500/?attribute_pa_packaging=single-vial",
   "subtotal_cad": "90.00",
   "discount_cad": "9.00",
   "shipping_cad": "not observed",
   "total_cad": "81.00",
   "payment_method_selected": false,
   "evidence_url": "/observations/2026-10-31/",
-  "line_items": [
-    {
-      "product_name": "TB-500 5mg - Single vial",
-      "quantity": 1,
-      "unit_price_cad": "40.00",
-      "line_subtotal_cad": "40.00"
-    }
-  ],
   "record_url": "/owner-records/growth10-owner-20261031084000-41185796637/",
   "product_name": "Retatrutide 10mg single vial",
   "cart_subtotal": "90.00",
