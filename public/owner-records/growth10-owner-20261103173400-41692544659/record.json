@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "status": "Verified at checkout",
+  "record_reference": "growth10-owner-20261103173400-41692544659",
+  "canonical_url": "https://growthguysgrowth10.ca/growth10#current-record",
+  "code": "GROWTH10",
+  "method": "Verified at checkout evidence",
+  "scope": "Documented pre-payment checkout record; no order was made.",
+  "observed_at": "2026-11-03T17:34:00.000Z",
+  "observed_time_precision": "minute (approximately 9:43 a.m. EDT)",
+  "observed_timezone": "America/Toronto",
+  "published_at": "2026-11-01T04:08:52.967Z",
+  "product": "BPC-157 5mg — single vial",
+  "subtotal_cad": "40.00",
+  "discount_cad": "4.00",
+  "shipping_cad": "not observed",
+  "total_cad": "36.00",
+  "payment_method_selected": false,
+  "evidence_url": "/evidence/2026-11-03/growth10-original-cart.webp",
+  "record_url": "/owner-records/growth10-owner-20261103173400-41692544659/",
+  "product_name": "BPC-157 5mg — single vial",
+  "cart_subtotal": "40.00",
+  "discount_amount": "4.00",
+  "observed_total": "36.00",
+  "source_record_reference": "growth10-owner-20261101040600-41271918847",
+  "product_url": "https://growthguys.com/shop/bpc-157-5mg/",
+  "line_items": [
+    {
+      "name": "BPC-157 5mg — single vial",
+      "quantity": 1,
+      "unit_price_cad": "40.00"
+    }
+  ]
+}
