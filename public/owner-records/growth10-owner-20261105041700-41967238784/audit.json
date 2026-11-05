@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "profile": "growth10",
+  "code": "GROWTH10",
+  "mode": "new",
+  "recordReference": "growth10-owner-20261105041700-41967238784",
+  "sourceRecordReference": "growth10-owner-20261104040400-41771131317",
+  "previousObservedAt": "2026-11-04T04:04:00.000Z",
+  "observedAt": "2026-11-05T04:17:00.000Z",
+  "owner": "harrysandhar01-web",
+  "reason": "Publish the November 4 cart observation captured in the approved fallback after the laptop promo control timed out; exact GROWTH10 cart result was preserved and checked.",
+  "originalEvidence": "https://growthguysgrowth10.ca/evidence/2026-11-05/growth10-original-cart.webp",
+  "publishedByRun": "41967238784",
+  "submittedAt": "2026-11-05T04:21:03.980Z"
+}
