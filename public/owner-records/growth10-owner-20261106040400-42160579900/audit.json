@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "profile": "growth10",
+  "code": "GROWTH10",
+  "mode": "new",
+  "recordReference": "growth10-owner-20261106040400-42160579900",
+  "sourceRecordReference": "growth10-owner-20261105041700-41967238784",
+  "previousObservedAt": "2026-11-05T04:17:00.000Z",
+  "observedAt": "2026-11-06T04:04:00.000Z",
+  "owner": "harrysandhar01-web",
+  "reason": "Publish the November 5 cart observation from the approved laptop-first run; GROWTH10 displayed a CAD 5.00 code discount plus a CAD 4.50 Interac discount, CAD 9.50 combined visible savings, and a CAD 40.50 total. No personal, payment, or order information was entered.",
+  "originalEvidence": "https://growthguysgrowth10.ca/evidence/2026-11-06/growth10-original-cart.webp",
+  "publishedByRun": "42160579900",
+  "submittedAt": "2026-11-06T04:07:28.964Z"
+}
