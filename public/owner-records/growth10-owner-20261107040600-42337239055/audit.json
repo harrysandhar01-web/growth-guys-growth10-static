@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "profile": "growth10",
+  "code": "GROWTH10",
+  "mode": "new",
+  "recordReference": "growth10-owner-20261107040600-42337239055",
+  "sourceRecordReference": "growth10-owner-20261106051200-42167233602",
+  "previousObservedAt": "2026-11-06T05:12:00.000Z",
+  "observedAt": "2026-11-07T04:06:00.000Z",
+  "owner": "harrysandhar01-web",
+  "reason": "Publish the dated cart record from the original laptop capture. The cart visibly showed GROWTH10 CAD 5.00 plus the merchant auto-applied Interac e-Transfer CAD 4.50 discount, for CAD 9.50 total savings and CAD 40.50 displayed total. No payment method was selected and no purchase was made.",
+  "originalEvidence": "https://growthguysgrowth10.ca/evidence/2026-11-07/growth10-final-cart.webp",
+  "publishedByRun": "42337239055",
+  "submittedAt": "2026-11-07T04:10:22.601Z"
+}
