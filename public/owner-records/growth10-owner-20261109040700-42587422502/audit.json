@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "profile": "growth10",
+  "code": "GROWTH10",
+  "mode": "new",
+  "recordReference": "growth10-owner-20261109040700-42587422502",
+  "sourceRecordReference": "growth10-owner-20261107040600-42337239055",
+  "previousObservedAt": "2026-11-07T04:06:00.000Z",
+  "observedAt": "2026-11-09T04:07:00.000Z",
+  "owner": "harrysandhar01-web",
+  "reason": "Publish the accepted November 8 cart-only GROWTH10 observation after the required same-cart code reapplication. The final visible cart showed the GROWTH10 code discount and the Interac e-Transfer discount, with no payment method selected and no order submitted.",
+  "originalEvidence": "/evidence/2026-11-08/growth10-final-cart.webp",
+  "publishedByRun": "42587422502",
+  "submittedAt": "2026-11-09T08:38:39.752Z"
+}
