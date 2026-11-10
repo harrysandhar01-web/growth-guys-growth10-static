@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "profile": "growth10",
+  "code": "GROWTH10",
+  "mode": "new",
+  "recordReference": "growth10-owner-20261110041100-42754354838",
+  "sourceRecordReference": "growth10-owner-20261109040700-42587422502",
+  "previousObservedAt": "2026-11-09T04:07:00.000Z",
+  "observedAt": "2026-11-10T04:11:00.000Z",
+  "owner": "harrysandhar01-web",
+  "reason": "New cart-only observation captured from original browser evidence; exact GROWTH10 code, product, subtotal, code discount, and displayed total were checked.",
+  "originalEvidence": "/evidence/2026-11-09/growth10-final-cart.webp",
+  "publishedByRun": "42754354838",
+  "submittedAt": "2026-11-10T04:12:35.159Z"
+}
