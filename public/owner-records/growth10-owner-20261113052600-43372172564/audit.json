@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "profile": "growth10",
+  "code": "GROWTH10",
+  "mode": "new",
+  "recordReference": "growth10-owner-20261113052600-43372172564",
+  "sourceRecordReference": "growth10-owner-20261111071700-42978516915",
+  "previousObservedAt": "2026-11-11T07:17:00.000Z",
+  "observedAt": "2026-11-13T05:26:00.000Z",
+  "owner": "harrysandhar01-web",
+  "reason": "New cart-only GROWTH10 observation: exact code applied to one in-stock single-vial item; final cart evidence retained before cleanup, with no personal or payment information entered.",
+  "originalEvidence": "/evidence/2026-11-13/growth10-cart-final.webp",
+  "publishedByRun": "43372172564",
+  "submittedAt": "2026-11-13T05:27:55.222Z"
+}
