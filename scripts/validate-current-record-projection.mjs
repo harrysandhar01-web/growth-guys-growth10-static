@@ -24,6 +24,35 @@ if (existsSync(joinFile(ownerDir,"owner-publication-state.json"))) {
   if (!existsSync(joinFile(ownerDir,"owner-records",state.latest,"index.html"))) throw Error("owner_record_archive_missing");
   if (!readFileSync(joinFile(ownerDir,"sitemap.xml"),"utf8").includes("/owner-records/"+state.latest+"/")) throw Error("owner_record_sitemap_missing");
   if (new Date(record.observed_at).toISOString()!==state.observedAt) throw Error("owner_time_not_consistent");
+  if (state.profile === "growth10") {
+    const pages = ["index.html", "growth10/index.html", "discount-codes/index.html", "how-we-verify/index.html", "verification-history/index.html", "growth10-offer-status-and-checkout-help/index.html", "verification-archive/index.html"];
+    for (const file of pages) {
+      const html = readFileSync(joinFile(ownerDir,file),"utf8");
+      for (const block of html.match(/<section\b[^>]*(?:current-record-refresh|verification-record-summary|current-verification-summary-title|id="current-record")[^>]*>[\s\S]*?<\/section>/g) ?? []) {
+        if (!block.includes(displayDate)) throw Error("stale_current_block:"+file);
+        if (block.includes("Product:") || block.includes("Basket")) {
+          for (const value of [record.product_name, record.subtotal_cad, record.discount_cad, record.total_cad]) {
+            if (!block.includes(value)) throw Error("current_block_value_mismatch:"+file+":"+value);
+          }
+        }
+      }
+      const metadata = html.match(/<meta name="verification:current-record" content="([^"]+)"/);
+      if (!metadata || !metadata[1].includes(displayDate) || !metadata[1].includes(record.total_cad)) throw Error("stale_current_metadata:"+file);
+      const hydration = html.match(/window\.__RQ_STATE__ = ([\s\S]*?)<\/script>/);
+      if (!hydration) throw Error("current_hydration_missing:"+file);
+      const queries = JSON.parse(hydration[1].replace(/;\s*$/, "")).json.queries;
+      const latest = queries.find(q => JSON.stringify(q.queryKey[0]) === '["verification","latest"]')?.state.data;
+      if (!latest || latest.verifiedAt !== record.observed_at || latest.recordReference !== record.record_reference || latest.productName !== record.product_name || latest.cartTotalMinor !== Math.round(Number(record.subtotal_cad)*100) || latest.discountMinor !== Math.round(Number(record.discount_cad)*100) || latest.finalTotalMinor !== Math.round(Number(record.total_cad)*100) || !latest.screenshotUrl.endsWith(record.evidence_url)) throw Error("stale_current_hydration:"+file);
+      // Date-bearing live time elements are current projections on these two
+      // pages; archive previews are explicitly historical and excluded.
+      if (file === "index.html" || file === "growth10/index.html") {
+        const currentHtml = html.replace(/<article\b[^>]*>[\s\S]*?<\/article>/g, "");
+        for (const date of currentHtml.matchAll(/<time\b[^>]*dateTime="([^"]+)"/g)) {
+          if (date[1] !== record.observed_at) throw Error("stale_secondary_current_time:"+file);
+        }
+      }
+    }
+  }
   console.log(JSON.stringify({ownerPublishedRecord:state.latest,profile:state.profile,status:"source_consistent"}));
   process.exit(0);
 }
