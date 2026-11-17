@@ -22,10 +22,11 @@ def current_text(text):
     # Only invoked on explicitly current sections, never archive/history rows.
     text = re.sub(r'(?:October|November) \d{1,2}, 2026(?: at (?:approximately )?\d{1,2}:\d{2} (?:a\.m\.|p\.m\.|AM|PM) (?:EDT|EST))?', lambda m: time if ' at ' in m[0] else date, text)
     text = re.sub(r'(dateTime|datetime|data-observed-at)="[^"]+"', lambda m: f'{m[1]}="{record["observed_at"]}"', text)
-    text = re.sub(r'(?:hCG 7,000 IU — Single vial|Retatrutide 10mg - Single vial|Retatrutide 10mg — Single vial|TB-500 5mg - Single vial|Semaglutide 5mg single vial|Tirzepatide 10mg - Single vial)', product, text)
+    text = re.sub(r'(?:hCG 7,000 IU — Single vial|Retatrutide 10mg - Single vial|Retatrutide 10mg — Single vial|TB-500 5mg - Single vial|Semaglutide 5mg single vial|Semaglutide 5mg — Single vial|Tirzepatide 10mg - Single vial)', product, text)
     text = text.replace('$80.00 CAD', '$' + record['subtotal_cad'] + ' CAD').replace('$8.00 CAD', '$' + record['discount_cad'] + ' CAD').replace('$72.00 CAD', '$' + record['total_cad'] + ' CAD').replace('$77.60 CAD', '$' + record['total_cad'] + ' CAD').replace('CAD 77.60', 'CAD ' + record['total_cad']).replace('CAD 8.00 on a CAD 80.00', f"CAD {record['discount_cad']} on a CAD {record['subtotal_cad']}").replace('$32.40 CAD', '$' + record['total_cad'] + ' CAD').replace('$64.80 CAD', '$' + record['total_cad'] + ' CAD')
     text = text.replace('CAD 64.80', 'CAD ' + record['total_cad']).replace('CAD 45.00', 'CAD ' + record['total_cad'])
     text = text.replace('$36.00 CAD', '$' + record['total_cad'] + ' CAD')
+    text = text.replace('$50.00 CAD', '$' + record['subtotal_cad'] + ' CAD').replace('$5.00 CAD', '$' + record['discount_cad'] + ' CAD').replace('$45.00 CAD', '$' + record['total_cad'] + ' CAD')
     text = text.replace('$40.00 CAD', '$' + record['subtotal_cad'] + ' CAD').replace('$4.00 CAD', '$' + record['discount_cad'] + ' CAD')
     text = text.replace('CAD 5.00 on a CAD 50.00', f"CAD {record['discount_cad']} on a CAD {record['subtotal_cad']}")
     text = re.sub(r'href="/(?:owner-records/growth10-owner-[^/]+|verification-archive/growth10-observed-[^/]+|observations/2026-[^/]+)/"', f'href="{record["record_url"]}"', text)
@@ -64,14 +65,22 @@ for relative in pages:
     head = re.sub(r'<meta\b[^>]*>', meta, head)
     def ldjson(m):
         data = json.loads(m[2])
-        for item in data.get('@graph', []):
-            if item.get('@type') != 'WebPage': continue
-            if 'Latest ' in item.get('name', ''): item['name'] = re.sub(r'Latest .*$', 'Latest ' + time, item['name'])
-            item['description'] = item.get('description', '').split('Current documented record:')[0].strip() + ' ' + summary
-            for prop in item.get('additionalProperty', []):
-                if prop.get('name') == 'Current GROWTH10 record': prop['value'] = summary
-                elif 'Documented checkout record' in prop.get('value', ''): prop['value'] = f'Documented checkout record — {time}; Code GROWTH10; 10% discount observed'
-        return m[1] + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + m[3]
+        if isinstance(data, dict) and "@graph" in data:
+            graph=[]
+            for item in data.get("@graph", []):
+                typ=item.get("@type")
+                if typ == "WebSite":
+                    graph.append({"@type":"WebSite","name":"GROWTH10 Verification Desk","url":"https://growthguysgrowth10.ca/"})
+                elif typ == "WebPage":
+                    graph.append({"@type":"WebPage","name":"Growth Guys Promo Code GROWTH10 — 10% Off","description":"Check the Growth Guys promo code GROWTH10 for a documented 10% pre-payment checkout record. No purchase was made; review the current record. " + summary,"url":"https://growthguysgrowth10.ca/","dateModified":record["observed_at"],"additionalProperty":[{"@type":"PropertyValue","name":"Verification status","value":"Verified at checkout."},{"@type":"PropertyValue","name":"Latest GROWTH10 verified checkout record","value":summary}]})
+                elif typ == "Organization":
+                    graph.append(item)
+            data["@graph"]=graph
+        elif isinstance(data, dict) and data.get("@type") == "FAQPage":
+            for q in data.get("mainEntity", []):
+                if q.get("name") == "What does the GROWTH10 discount code do?":
+                    q.setdefault("acceptedAnswer", {})["text"] = "GROWTH10 is a Growth Guys promo code, discount code, and coupon code with a current dated pre-payment checkout record. The latest record shows CAD " + record["discount_cad"] + " reduced from a CAD " + record["subtotal_cad"] + " basket to a CAD " + record["total_cad"] + " displayed total. No purchase was made."
+        return m[1] + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + m[3]
     head = re.sub(r'(<script[^>]*type="application/ld\+json"[^>]*>)(.*?)(</script>)', ldjson, head, flags=re.S)
     def section(m):
         block = m[0]

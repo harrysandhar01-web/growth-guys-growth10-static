@@ -155,5 +155,8 @@ manifest.ownerControlled=true;
 put("deployment-manifest.json",manifest);
 put("owner-publication-state.json",{latest:id,profile,code:cfg.code,observedAt,submittedAt:now,mode,previousReference:oldRef});
 for(const [file,content] of out) write(file,content);
+// Reproject current-page metadata/schema after every owner update so stale SEO fields cannot survive a new record.
+const { execFileSync } = await import("node:child_process");
+execFileSync("python3", ["scripts/project-existing-current-record.py"], { stdio: "inherit" });
 if(process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT,"record_reference="+id+"\n");
 console.log("OWNER_PUBLICATION_STAGED "+JSON.stringify({id,profile,mode,files:out.size,dateLabel}));
