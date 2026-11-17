@@ -27,6 +27,8 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           enablement: true
+      - name: Run customer-facing pre-publication QA
+        run: node scripts/validate-customer-facing-site.mjs
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
