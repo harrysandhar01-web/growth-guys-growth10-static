@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "profile": "growth10",
+  "code": "GROWTH10",
+  "mode": "new",
+  "recordReference": "growth10-owner-20261118050100-44241642421",
+  "sourceRecordReference": "growth10-owner-20261117045100-44020208870",
+  "previousObservedAt": "2026-11-17T04:51:00.000Z",
+  "observedAt": "2026-11-18T05:01:00.000Z",
+  "owner": "harrysandhar01-web",
+  "reason": "Publish the original GROWTH10 cart-only evidence captured on the laptop browser; no purchase was made.",
+  "originalEvidence": "/evidence/2026-11-18-growth10-cart-only/growth10-cart-code-applied.webp",
+  "publishedByRun": "44241642421",
+  "submittedAt": "2026-11-18T05:04:39.317Z"
+}
