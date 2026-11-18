@@ -24,13 +24,13 @@ def current_text(text):
     text = re.sub(r'(dateTime|datetime|data-observed-at)="[^"]+"', lambda m: f'{m[1]}="{record["observed_at"]}"', text)
     text = re.sub(r'(?:hCG 7,000 IU — Single vial|Retatrutide 10mg - Single vial|Retatrutide 10mg — Single vial|TB-500 5mg - Single vial|Semaglutide 5mg single vial|Semaglutide 5mg — Single vial|Tirzepatide 10mg - Single vial)', product, text)
     text = text.replace('$80.00 CAD', '$' + record['subtotal_cad'] + ' CAD').replace('$8.00 CAD', '$' + record['discount_cad'] + ' CAD').replace('$72.00 CAD', '$' + record['total_cad'] + ' CAD').replace('$77.60 CAD', '$' + record['total_cad'] + ' CAD').replace('CAD 77.60', 'CAD ' + record['total_cad']).replace('CAD 8.00 on a CAD 80.00', f"CAD {record['discount_cad']} on a CAD {record['subtotal_cad']}").replace('$32.40 CAD', '$' + record['total_cad'] + ' CAD').replace('$64.80 CAD', '$' + record['total_cad'] + ' CAD')
-    text = text.replace('CAD 64.80', 'CAD ' + record['total_cad']).replace('CAD 45.00', 'CAD ' + record['total_cad'])
+    text = text.replace('CAD 64.80', 'CAD ' + record['total_cad']).replace('CAD 45.00', 'CAD ' + record['total_cad']).replace('CAD 57.60', 'CAD ' + record['total_cad'])
     text = text.replace('$36.00 CAD', '$' + record['total_cad'] + ' CAD')
     text = text.replace('$50.00 CAD', '$' + record['subtotal_cad'] + ' CAD').replace('$5.00 CAD', '$' + record['discount_cad'] + ' CAD').replace('$45.00 CAD', '$' + record['total_cad'] + ' CAD')
-    text = text.replace('$40.00 CAD', '$' + record['subtotal_cad'] + ' CAD').replace('$4.00 CAD', '$' + record['discount_cad'] + ' CAD')
+    text = text.replace('$40.00 CAD', '$' + record['subtotal_cad'] + ' CAD').replace('$4.00 CAD', '$' + record['discount_cad'] + ' CAD').replace('$57.60 CAD', '$' + record['total_cad'] + ' CAD')
     text = text.replace('CAD 5.00 on a CAD 50.00', f"CAD {record['discount_cad']} on a CAD {record['subtotal_cad']}")
     text = re.sub(r'href="/(?:owner-records/growth10-owner-[^/]+|verification-archive/growth10-observed-[^/]+|observations/2026-[^/]+)/"', f'href="{record["record_url"]}"', text)
-    text = re.sub(r'href="/evidence/2026-11-(?:06|09)/[^\"]+"', f'href="{record["evidence_url"]}"', text)
+    text = re.sub(r'href="/evidence/[^\"]+"', f'href="{record["evidence_url"]}"', text)
     return text
 
 for relative in pages:

@@ -24,13 +24,14 @@ for (const file of requiredPages) {
   if (!/<html\b/i.test(html) || !/<body\b/i.test(html)) fail(`${file}:not_html_document`);
   if (!/<title>[^<]+<\/title>/i.test(html)) fail(`${file}:missing_title`);
   if (!/<h1\b[^>]*>[\s\S]*?<\/h1>/i.test(html)) fail(`${file}:missing_h1`);
-  if (/CAD 4\.00 reduced from a CAD 40\.00|Latest verified checkout result<\/strong>November 15, 2026 at 1:12 a\.m\. EST/.test(html) && file === "index.html") fail(`${file}:stale_current_copy`);
   if (file === "index.html") {
     if (!html.includes('rel="canonical"') || !html.includes("https://growthguysgrowth10.ca/")) fail(`${file}:canonical_missing_or_wrong`);
     if (!html.includes(record.product_name)) fail(`${file}:current_product_missing`);
     if (!html.includes(record.evidence_url)) fail(`${file}:current_evidence_missing`);
     if (!html.includes(record.record_reference)) fail(`${file}:current_reference_missing`);
     if (!html.includes("growth10-evidence-gallery")) fail(`${file}:evidence_gallery_missing`);
+    const ownerBlock = html.match(/<!-- OWNER_RECORD_START -->([\s\S]*?)<!-- OWNER_RECORD_END -->/i)?.[1] ?? "";
+    if (!ownerBlock.includes(record.record_reference) || !ownerBlock.includes(record.product_name)) fail(`${file}:current_owner_block_stale`);
   }
 }
 
