@@ -20,3 +20,5 @@ Allow: /
 
 User-agent: ClaudeBot
 Allow: /
+# AI-readable site summary
+# https://growthguysgrowth10.ca/llms.txt
