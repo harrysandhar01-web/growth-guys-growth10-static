@@ -12,6 +12,7 @@ const requiredPages = [
   "verification-archive/index.html",
   "verification-history/index.html",
   "how-we-verify/index.html",
+  "guides/growth-guys-growth10-promo-code-savings/index.html",
 ];
 const fail = (message) => { throw new Error(`customer_facing_qa_failed:${message}`); };
 

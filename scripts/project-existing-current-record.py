@@ -4,7 +4,7 @@ import json
 import re
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from html import escape
+from html import escape, unescape
 
 public = Path(__file__).resolve().parents[1] / 'public'
 record = json.loads((public / 'api/current-record.json').read_text())
@@ -15,12 +15,18 @@ date = f"{observed:%B} {observed.day}, {observed.year}"
 time = f"{date} at {observed.hour % 12 or 12}:{observed.minute:02d} {'a.m.' if observed.hour < 12 else 'p.m.'} {observed:%Z}"
 product = record['product_name']
 summary = f"Current documented record; {product}; observed {time}; subtotal CAD {record['subtotal_cad']}; discount CAD {record['discount_cad']}; total CAD {record['total_cad']}; GROWTH10; {record['status']}. {record['scope']}"
-pages = ['index.html', 'growth10/index.html', 'discount-codes/index.html', 'how-we-verify/index.html', 'verification-history/index.html', 'growth10-offer-status-and-checkout-help/index.html', 'verification-archive/index.html']
+pages = ['index.html', 'growth10/index.html', 'discount-codes/index.html', 'how-we-verify/index.html', 'verification-history/index.html', 'growth10-offer-status-and-checkout-help/index.html', 'verification-archive/index.html', 'guides/growth-guys-growth10-promo-code-savings/index.html']
+
+def decode_attr(value):
+    previous = None
+    while value != previous:
+        previous, value = value, unescape(value)
+    return value
 
 
 def current_text(text):
     # Only invoked on explicitly current sections, never archive/history rows.
-    text = re.sub(r'(?:October|November) \d{1,2}, 2026(?: at (?:approximately )?\d{1,2}:\d{2} (?:a\.m\.|p\.m\.|AM|PM) (?:EDT|EST))?', lambda m: time if ' at ' in m[0] else date, text)
+    text = re.sub(r'(?:January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}, 2026(?: at (?:approximately )?\d{1,2}:\d{2} (?:a\.m\.|p\.m\.|AM|PM) (?:EDT|EST))?', lambda m: time if ' at ' in m[0] else date, text)
     text = re.sub(r'(dateTime|datetime|data-observed-at)="[^"]+"', lambda m: f'{m[1]}="{record["observed_at"]}"', text)
     text = re.sub(r'(?:hCG 7,000 IU — Single vial|Retatrutide 10mg - Single vial|Retatrutide 10mg — Single vial|TB-500 5mg - Single vial|Semaglutide 5mg single vial|Semaglutide 5mg — Single vial|Tirzepatide 10mg - Single vial)', product, text)
     text = text.replace('$80.00 CAD', '$' + record['subtotal_cad'] + ' CAD').replace('$8.00 CAD', '$' + record['discount_cad'] + ' CAD').replace('$72.00 CAD', '$' + record['total_cad'] + ' CAD').replace('$77.60 CAD', '$' + record['total_cad'] + ' CAD').replace('CAD 77.60', 'CAD ' + record['total_cad']).replace('CAD 8.00 on a CAD 80.00', f"CAD {record['discount_cad']} on a CAD {record['subtotal_cad']}").replace('$32.40 CAD', '$' + record['total_cad'] + ' CAD').replace('$64.80 CAD', '$' + record['total_cad'] + ' CAD')
@@ -39,7 +45,7 @@ for relative in pages:
     html = original
     # Metadata belongs to the current projection, not to an accepted archive record.
     head, body = html.split('</head>', 1)
-    head = re.sub(r'<title>(.*?)</title>', lambda m: '<title>' + re.sub(r'Latest .*$', 'Latest ' + time, m[1]) + '</title>', head)
+    head = re.sub(r'<title>(.*?)</title>', lambda m: '<title>' + re.sub(r'Latest .*$', 'Latest ' + time, decode_attr(m[1])) + '</title>', head)
     def meta(m):
         tag = m[0]
         key = re.search(r'(?:name|property)="([^"]+)"', tag)
@@ -51,13 +57,13 @@ for relative in pages:
         elif key == 'verification:record-reference': value = record['record_reference']
         elif key == 'verification:current-record': value = summary
         elif key in ['description', 'og:description', 'twitter:description']:
-            old = re.search(r'content="([^"]*)"', tag)[1]
-            base = old.split('Current documented record:')[0].strip()
             if relative in ['index.html', 'growth10/index.html']:
                 base = 'GROWTH10 Growth Guys promo code and discount code with a dated pre-payment cart record. No purchase was made.'
+            else:
+                base = 'Growth Guys GROWTH10 promo code, coupon code, and discount code information with a dated pre-payment checkout record.'
             value = base + ' ' + summary
         elif key in ['og:title', 'twitter:title']:
-            old = re.search(r'content="([^"]*)"', tag)[1]
+            old = decode_attr(re.search(r'content="([^"]*)"', tag)[1])
             value = re.sub(r'Latest .*$', 'Latest ' + time, old)
         if value is not None:
             tag = re.sub(r'content="[^"]*"', 'content="' + escape(value, quote=True) + '"', tag)

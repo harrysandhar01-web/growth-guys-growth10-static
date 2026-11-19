@@ -16,7 +16,7 @@ if (existsSync(joinFile(ownerDir,"owner-publication-state.json"))) {
   // follow the accepted record's Toronto observation date instead of the UTC
   // calendar date embedded in the key.
   const publicationDate=new Intl.DateTimeFormat("en-US",{timeZone:"America/Toronto",month:"long",day:"numeric",year:"numeric"}).format(new Date(record.observed_at));
-  for (const file of ["index.html",cfg.route+"/index.html","verification-archive/index.html"]) {
+  for (const file of ["index.html",cfg.route+"/index.html","verification-archive/index.html", "guides/growth-guys-growth10-promo-code-savings/index.html"]) {
     const html=readFileSync(joinFile(ownerDir,file),"utf8");
     // Public pages use the customer-facing current-record block; an internal
     // owner banner is not required and must not be the publication contract.
