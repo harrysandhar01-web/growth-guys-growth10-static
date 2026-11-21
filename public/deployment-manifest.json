@@ -3,10 +3,10 @@
   "profileId": "growth10",
   "code": "GROWTH10",
   "canonicalOrigin": "https://growthguysgrowth10.ca",
-  "generatedAt": "2026-11-20T06:14:03.497Z",
+  "generatedAt": "2026-11-21T04:49:37.788Z",
   "source": "canonical_public_html_snapshot",
-  "eventKey": "growth10-owner-20261120060900-44686329464",
-  "recordPublishedAt": "2026-11-20T06:14:03.497Z",
+  "eventKey": "growth10-owner-20261121044700-44867940184",
+  "recordPublishedAt": "2026-11-21T04:49:37.788Z",
   "staticRoutes": {
     "/": "/index.html",
     "/about/": "/about/index.html",
@@ -164,7 +164,7 @@
   "deploymentState": "built_not_deployed",
   "canonicalSnapshot": {
     "generatedAt": "2026-10-19T16:19:11.000Z",
-    "publicRouteCount": 180,
+    "publicRouteCount": 181,
     "publicAssetCount": 34,
     "currentRecordReference": "growth10-observed-20261019-145508",
     "currentRecordObservedAt": "2026-10-19T14:55:08Z",

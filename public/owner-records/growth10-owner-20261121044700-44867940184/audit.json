@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "profile": "growth10",
+  "code": "GROWTH10",
+  "mode": "new",
+  "recordReference": "growth10-owner-20261121044700-44867940184",
+  "sourceRecordReference": "growth10-owner-20261120060900-44686329464",
+  "previousObservedAt": "2026-11-20T06:09:00.000Z",
+  "observedAt": "2026-11-21T04:47:00.000Z",
+  "owner": "harrysandhar01-web",
+  "reason": "Recover the overdue November 20 Vancouver evening cart-only verification from the connected laptop using the independently observed GROWTH10 BPC-157 10mg cart and retained original evidence.",
+  "originalEvidence": "/evidence/2026-11-20-growth10-cart-only-recovery/growth10-cart-code-applied.webp",
+  "publishedByRun": "44867940184",
+  "submittedAt": "2026-11-21T04:49:37.788Z"
+}
