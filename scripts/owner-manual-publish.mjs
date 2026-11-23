@@ -15,6 +15,15 @@ const mode = process.env.PUBLICATION_MODE;
 if (!["new","correction"].includes(mode)) throw new Error("invalid_publication_mode");
 const reason = (process.env.OWNER_REASON || "").trim();
 if (reason.length < 8 || reason.length > 700) throw new Error("owner_reason_required");
+let candidateReceipt = null;
+if (profile === "growth10") {
+  const packagePath = (process.env.EVIDENCE_PACKAGE || "").trim();
+  if (!packagePath) throw new Error("growth10_evidence_package_required");
+  const { execFileSync } = await import("node:child_process");
+  const receiptText = execFileSync("node", ["scripts/validate-growth10-evidence.mjs", packagePath], { encoding: "utf8" }).trim();
+  candidateReceipt = JSON.parse(receiptText);
+  if (candidateReceipt.status !== "validated_candidate" || candidateReceipt.site !== "GROWTH10") throw new Error("growth10_candidate_validation_receipt_invalid");
+}
 const eastern = String(process.env.OBSERVED_EASTERN || "").trim();
 const parts = /^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})$/.exec(eastern);
 if (!parts) throw new Error("enter_observed_eastern_as_YYYY-MM-DD_HH:MM");
@@ -56,6 +65,12 @@ const discount=toCents(process.env.DISCOUNT_AMOUNT || (mode==="correction"?exist
 const total=toCents(process.env.DISPLAYED_TOTAL || (mode==="correction"?existingTotal:""),"total");
 if (subtotal<=0 || discount<=0 || discount>subtotal) throw new Error("positive_discount_within_subtotal_required");
 if (total<0) throw new Error("invalid_total");
+const dollars=n=>(n/100).toFixed(2);
+if (candidateReceipt) {
+  if (candidateReceipt.observed_at !== observedAt) throw new Error("owner_time_does_not_match_validated_candidate");
+  if (candidateReceipt.product !== product || candidateReceipt.subtotal !== dollars(subtotal) || candidateReceipt.discount !== dollars(discount) || candidateReceipt.total !== dollars(total)) throw new Error("owner_values_do_not_match_validated_candidate");
+  if ((process.env.BITCOIN_ADJUSTMENT || "0.00") !== candidateReceipt.bitcoin) throw new Error("owner_bitcoin_adjustment_does_not_match_validated_candidate");
+}
 const evidence=(process.env.EVIDENCE_URL || (mode==="correction"?prev.evidence_url:"") || "").trim();
 if (!evidence) throw new Error("evidence_link_required");
 const allowRelative=/^\/(?:evidence|manus-storage|verification-archive|observations|owner-records)\/[a-zA-Z0-9_./-]+\/?$/;
@@ -65,7 +80,6 @@ const rel=evidence.startsWith("/") ? evidence : new URL(evidence).pathname;
 if (!fs.existsSync(p(rel.slice(1)))) throw new Error("evidence_does_not_exist_in_site_files");
 const id=profile+"-owner-"+observedAt.replace(/[-:TZ.]/g,"").slice(0,14)+"-"+(process.env.GITHUB_RUN_ID || "manual");
 if (fs.existsSync(p("owner-records/"+id+"/index.html"))) throw new Error("duplicate_owner_publication");
-const dollars=n=>(n/100).toFixed(2);
 const escapeHtml=v=>String(v).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
 const dateLabel = new Intl.DateTimeFormat("en-CA",{timeZone:"America/Toronto",month:"long",day:"numeric",year:"numeric"}).format(candidates[0]);
 const timeLabel = new Intl.DateTimeFormat("en-CA",{timeZone:"America/Toronto",year:"numeric",month:"long",day:"numeric",hour:"numeric",minute:"2-digit",timeZoneName:"short"}).format(candidates[0]);

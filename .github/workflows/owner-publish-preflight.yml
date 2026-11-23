@@ -5,6 +5,8 @@ on:
       - 'scripts/owner-manual-publish.mjs'
       - 'scripts/project-existing-current-record.py'
       - 'scripts/validate-current-record-projection.mjs'
+      - 'scripts/validate-growth10-evidence.mjs'
+      - 'scripts/test-growth10-evidence.mjs'
       - '.github/workflows/owner-manual-publish.yml'
       - '.github/workflows/owner-publish-preflight.yml'
   pull_request:
@@ -12,6 +14,8 @@ on:
       - 'scripts/owner-manual-publish.mjs'
       - 'scripts/project-existing-current-record.py'
       - 'scripts/validate-current-record-projection.mjs'
+      - 'scripts/validate-growth10-evidence.mjs'
+      - 'scripts/test-growth10-evidence.mjs'
       - '.github/workflows/owner-manual-publish.yml'
       - '.github/workflows/owner-publish-preflight.yml'
 permissions:
@@ -27,6 +31,10 @@ jobs:
           node-version: '22'
       - name: Syntax-check manual publisher
         run: node --check scripts/owner-manual-publish.mjs
+      - name: Validate GROWTH10 evidence contract
+        run: |
+          node --check scripts/validate-growth10-evidence.mjs
+          node scripts/test-growth10-evidence.mjs
       - name: Test evidence-backed owner correction in isolated copy
         env:
           GITHUB_ACTOR: harrysandhar01-web
@@ -35,6 +43,8 @@ jobs:
           PUBLICATION_MODE: correction
           OBSERVED_EASTERN: '2026-10-25 09:43'
           OWNER_REASON: 'Preflight test; preserve original evidence and original verified time'
+          EVIDENCE_PACKAGE: '$GITHUB_WORKSPACE/scripts/fixtures/growth10-preflight-package.json'
+          BITCOIN_ADJUSTMENT: '10.80'
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/owner-test"
@@ -56,8 +66,10 @@ jobs:
           CART_SUBTOTAL: '40.00'
           DISCOUNT_AMOUNT: '4.00'
           DISPLAYED_TOTAL: '36.00'
+          BITCOIN_ADJUSTMENT: '0.00'
           EVIDENCE_URL: '/verification-archive/growth10-observed-20261025-1343edt-approx/'
           OWNER_REASON: 'Regression fixture for new observation branch; no production changes'
+          EVIDENCE_PACKAGE: '$GITHUB_WORKSPACE/scripts/fixtures/growth10-new-preflight-package.json'
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/owner-new-test"

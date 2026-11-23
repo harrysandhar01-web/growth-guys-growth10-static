@@ -1,0 +1,11 @@
+{
+  "site":"GROWTH10","code":"GROWTH10","event_key":"growth10-2026-10-25-preflight-fixture","evidence_date":"2026-10-25","observed_at":"2026-10-25T13:43:00.000Z",
+  "product":"BPC-157 10mg - Single vial","quantity":1,"subtotal":"60.00","discount":"6.00","bitcoin":"10.80","total":"43.20","currency":"CAD","coupon":"GROWTH10",
+  "merchant_response":"Coupon code applied successfully.","status":"candidate_evidence_retained","payment_method_changed":false,
+  "scope":{"account_or_identity_entered":false,"address_entered":false,"payment_entered":false,"checkout_submitted":false,"order_placed":false},
+  "prohibited_actions":["login","identity","address","payment","checkout_submission","order","captcha_bypass"],
+  "originals":[
+    {"role":"products","path":"products.webp","mime_type":"image/webp","sha256":"3008175dff25fb92e7904de719560ceb99668f658396c4f79a306d5e9bf60aa2","captured_at":"2026-10-25T13:42:00.000Z"},
+    {"role":"cart_totals","path":"cart-totals.webp","mime_type":"image/webp","sha256":"bd63a9a9eeea5da397b02c5a4fec111bce0cf04f70344a4a332613857683685c","captured_at":"2026-10-25T13:43:00.000Z"}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "site":"GROWTH10","code":"GROWTH10","event_key":"growth10-2026-11-22-new-fixture","evidence_date":"2026-11-22","observed_at":"2026-11-22T14:43:00.000Z",
+  "product":"TB-500 5mg - Single vial","quantity":1,"subtotal":"40.00","discount":"4.00","bitcoin":"0.00","total":"36.00","currency":"CAD","coupon":"GROWTH10",
+  "merchant_response":"Coupon code applied successfully.","status":"candidate_evidence_retained","payment_method_changed":false,
+  "scope":{"account_or_identity_entered":false,"address_entered":false,"payment_entered":false,"checkout_submitted":false,"order_placed":false},
+  "prohibited_actions":["login","identity","address","payment","checkout_submission","order","captcha_bypass"],
+  "originals":[
+    {"role":"products","path":"new-products.webp","mime_type":"image/webp","sha256":"e6e5f6184ef55259ed323136d7bbf236c089336dbfcd905dc7a0b46c94ca091e","captured_at":"2026-11-22T14:42:00.000Z"},
+    {"role":"cart_totals","path":"new-cart.webp","mime_type":"image/webp","sha256":"881d9c11a315fdc8486f298584e304a6d934272bc0c9aaf43ae79d13a8455ff1","captured_at":"2026-11-22T14:43:00.000Z"}
+  ]
+}

@@ -50,6 +50,10 @@ on:
         required: true
         default: false
         description: I checked original cart evidence and approve publication
+      evidence_package:
+        type: string
+        required: true
+        description: "Committed GROWTH10 candidate evidence package JSON; must pass the site-specific validator"
 permissions:
   contents: write
   pages: write
@@ -89,8 +93,10 @@ jobs:
           PAYMENT_METHOD_CHANGED: ${{ inputs.payment_method_changed }}
           OWNER_REASON: ${{ inputs.owner_reason }}
           OWNER_CONFIRMED: ${{ inputs.owner_confirmed }}
+          EVIDENCE_PACKAGE: ${{ inputs.evidence_package }}
         run: |
           node --check scripts/owner-manual-publish.mjs
+          node --check scripts/validate-growth10-evidence.mjs
           node scripts/owner-manual-publish.mjs
       - name: Write directly to production source
         env:
