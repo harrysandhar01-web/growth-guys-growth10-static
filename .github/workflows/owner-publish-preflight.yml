@@ -43,7 +43,7 @@ jobs:
           PUBLICATION_MODE: correction
           OBSERVED_EASTERN: '2026-10-25 09:43'
           OWNER_REASON: 'Preflight test; preserve original evidence and original verified time'
-          EVIDENCE_PACKAGE: '$GITHUB_WORKSPACE/scripts/fixtures/growth10-preflight-package.json'
+          EVIDENCE_PACKAGE: ${{ github.workspace }}/scripts/fixtures/growth10-preflight-package.json
           BITCOIN_ADJUSTMENT: '10.80'
         run: |
           set -euo pipefail
@@ -69,7 +69,7 @@ jobs:
           BITCOIN_ADJUSTMENT: '0.00'
           EVIDENCE_URL: '/verification-archive/growth10-observed-20261025-1343edt-approx/'
           OWNER_REASON: 'Regression fixture for new observation branch; no production changes'
-          EVIDENCE_PACKAGE: '$GITHUB_WORKSPACE/scripts/fixtures/growth10-new-preflight-package.json'
+          EVIDENCE_PACKAGE: ${{ github.workspace }}/scripts/fixtures/growth10-new-preflight-package.json
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/owner-new-test"
