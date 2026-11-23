@@ -35,8 +35,12 @@ def current_text(text):
     text = text.replace('$50.00 CAD', '$' + record['subtotal_cad'] + ' CAD').replace('$5.00 CAD', '$' + record['discount_cad'] + ' CAD').replace('$45.00 CAD', '$' + record['total_cad'] + ' CAD')
     text = text.replace('$40.00 CAD', '$' + record['subtotal_cad'] + ' CAD').replace('$4.00 CAD', '$' + record['discount_cad'] + ' CAD').replace('$57.60 CAD', '$' + record['total_cad'] + ' CAD')
     text = re.sub(r'CAD [0-9]+\.[0-9]{2} on a CAD [0-9]+\.[0-9]{2}', f"CAD {record['discount_cad']} on a CAD {record['subtotal_cad']}", text)
+    text = re.sub(r'(Discount:\s*(?:</?[^>]+>\s*)*)(?:CAD\s*)?\$[0-9]+\.[0-9]{2}\s*CAD\s+on\s+a\s+\$[0-9]+\.[0-9]{2}\s*CAD\s+cart', rf'\g<1>${record["discount_cad"]} CAD on a ${record["subtotal_cad"]} CAD cart', text)
     text = text.replace('CAD 28.80', 'CAD ' + record['total_cad']).replace('$28.80 CAD', '$' + record['total_cad'] + ' CAD')
-    text = re.sub(r'(Displayed total:\s*)(?:CAD\s*)?\$?[0-9]+\.[0-9]{2}(?:\s*CAD)?', rf'\g<1>CAD {record["total_cad"]}', text)
+    text = re.sub(r'(Displayed total:\s*(?:</?[^>]+>\s*)*)(?:CAD\s*)?\$?[0-9]+\.[0-9]{2}(?:\s*CAD)?', rf'\g<1>CAD {record["total_cad"]}', text)
+    text = re.sub(r'(>Subtotal</dt><dd[^>]*>).*?(</dd>)', rf'\g<1>${record["subtotal_cad"]} CAD\g<2>', text, flags=re.S)
+    text = re.sub(r'(>Discount</dt><dd[^>]*>).*?(</dd>)', rf'\g<1>${record["discount_cad"]} CAD\g<2>', text, flags=re.S)
+    text = re.sub(r'(>Total</dt><dd[^>]*>).*?(</dd>)', rf'\g<1>${record["total_cad"]} CAD\g<2>', text, flags=re.S)
     text = re.sub(r'href="/(?:owner-records/growth10-owner-[^/]+|verification-archive/growth10-observed-[^/]+|observations/2026-[^/]+)/"', f'href="{record["record_url"]}"', text)
     text = re.sub(r'href="/evidence/[^\"]+"', f'href="{record["evidence_url"]}"', text)
     return text
