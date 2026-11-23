@@ -49,7 +49,7 @@ jobs:
           OWNER_CONFIRMED: 'true'
           SITE_PROFILE: growth10
           PUBLICATION_MODE: new
-          OBSERVED_EASTERN: '2026-11-27 09:43'
+          OBSERVED_EASTERN: '2026-11-22 09:43'
           PRODUCT_NAME: 'TB-500 5mg - Single vial'
           CART_SUBTOTAL: '40.00'
           DISCOUNT_AMOUNT: '4.00'
