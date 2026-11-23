@@ -3,12 +3,14 @@ on:
   push:
     paths:
       - 'scripts/owner-manual-publish.mjs'
+      - 'scripts/project-existing-current-record.py'
       - 'scripts/validate-current-record-projection.mjs'
       - '.github/workflows/owner-manual-publish.yml'
       - '.github/workflows/owner-publish-preflight.yml'
   pull_request:
     paths:
       - 'scripts/owner-manual-publish.mjs'
+      - 'scripts/project-existing-current-record.py'
       - 'scripts/validate-current-record-projection.mjs'
       - '.github/workflows/owner-manual-publish.yml'
       - '.github/workflows/owner-publish-preflight.yml'
