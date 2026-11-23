@@ -33,6 +33,14 @@ on:
       line_items_json:
         type: string
         description: "Verified line items JSON for this exact record; omit if unverified"
+      bitcoin_adjustment:
+        type: string
+        description: "Displayed Bitcoin adjustment in CAD; omit if not visible"
+      payment_method_changed:
+        type: boolean
+        required: true
+        default: false
+        description: "Whether a payment method was selected or changed during this cart observation"
       owner_reason:
         type: string
         required: true
@@ -47,7 +55,7 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: owner-publish
+  group: pages
   cancel-in-progress: false
 jobs:
   publish:
@@ -77,6 +85,8 @@ jobs:
           DISPLAYED_TOTAL: ${{ inputs.displayed_total }}
           PRODUCT_URL: ${{ inputs.product_url }}
           LINE_ITEMS_JSON: ${{ inputs.line_items_json }}
+          BITCOIN_ADJUSTMENT: ${{ inputs.bitcoin_adjustment }}
+          PAYMENT_METHOD_CHANGED: ${{ inputs.payment_method_changed }}
           OWNER_REASON: ${{ inputs.owner_reason }}
           OWNER_CONFIRMED: ${{ inputs.owner_confirmed }}
         run: |
