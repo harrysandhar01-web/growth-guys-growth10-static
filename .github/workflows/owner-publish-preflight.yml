@@ -36,7 +36,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/owner-test"
-          cp -a public "$RUNNER_TEMP/owner-test/public"
+          cp -a public scripts "$RUNNER_TEMP/owner-test/"
           cd "$RUNNER_TEMP/owner-test"
           node "$GITHUB_WORKSPACE/scripts/owner-manual-publish.mjs"
           node "$GITHUB_WORKSPACE/scripts/validate-current-record-projection.mjs" public
@@ -59,7 +59,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/owner-new-test"
-          cp -a public "$RUNNER_TEMP/owner-new-test/public"
+          cp -a public scripts "$RUNNER_TEMP/owner-new-test/"
           cd "$RUNNER_TEMP/owner-new-test"
           node "$GITHUB_WORKSPACE/scripts/owner-manual-publish.mjs"
           node "$GITHUB_WORKSPACE/scripts/validate-current-record-projection.mjs" public
