@@ -2,7 +2,7 @@
   "site": "GROWTH10",
   "code": "GROWTH10",
   "event_key": "growth10-2026-11-24-tirzepatide",
-  "observed_at": "2026-11-24T19:25:27.016Z",
+  "observed_at": "2026-11-24T19:25:00.000Z",
   "evidence_date": "2026-11-24",
   "currency": "CAD",
   "product": "Tirzepatide 10mg - Single vial",
@@ -44,9 +44,10 @@
       "path": "growth10-final-checkout-applied-code.webp",
       "mime_type": "image/webp",
       "sha256": "1448f1fce5e450ebc3c54f7a9cc0502e23787986db4eb62f9bf359659cb92f18",
-      "captured_at": "2026-11-24T19:25:27.016Z"
+      "captured_at": "2026-11-24T19:25:00.000Z"
     }
   ],
   "status": "candidate_evidence_retained",
-  "coupon": "GROWTH10"
+  "coupon": "GROWTH10",
+  "observed_time_precision": "minute"
 }
