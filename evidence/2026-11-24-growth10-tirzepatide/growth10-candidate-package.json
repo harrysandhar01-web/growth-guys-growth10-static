@@ -1,0 +1,52 @@
+{
+  "site": "GROWTH10",
+  "code": "GROWTH10",
+  "event_key": "growth10-2026-11-24-tirzepatide",
+  "observed_at": "2026-11-24T19:25:27.016Z",
+  "evidence_date": "2026-11-24",
+  "currency": "CAD",
+  "product": "Tirzepatide 10mg - Single vial",
+  "quantity": 1,
+  "subtotal": "50.00",
+  "discount": "5.00",
+  "bitcoin": "9.00",
+  "total": "36.00",
+  "shipping": "20.00",
+  "merchant_response": "Coupon code \"growth10\" applied; Coupon: growth10; -$5.00",
+  "scope": {
+    "cart_only": true,
+    "account_or_identity_entered": false,
+    "address_entered": false,
+    "payment_entered": false,
+    "checkout_submitted": false,
+    "order_placed": false
+  },
+  "payment_method_changed": false,
+  "prohibited_actions": [
+    "login",
+    "identity",
+    "address",
+    "payment",
+    "checkout_submission",
+    "order",
+    "captcha_bypass"
+  ],
+  "originals": [
+    {
+      "role": "products",
+      "path": "growth10-products-cart.webp",
+      "mime_type": "image/webp",
+      "sha256": "e07de23e16f2cf3e651743adf56d6dde85e74d727393c4a407367d1a806eb943",
+      "captured_at": "2026-11-24T19:24:50.760Z"
+    },
+    {
+      "role": "cart_totals",
+      "path": "growth10-final-checkout-applied-code.webp",
+      "mime_type": "image/webp",
+      "sha256": "1448f1fce5e450ebc3c54f7a9cc0502e23787986db4eb62f9bf359659cb92f18",
+      "captured_at": "2026-11-24T19:25:27.016Z"
+    }
+  ],
+  "status": "candidate_evidence_retained",
+  "coupon": "GROWTH10"
+}
