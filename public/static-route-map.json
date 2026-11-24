@@ -184,5 +184,6 @@
   "/sitemap.xml": "/sitemap.xml",
   "/verification-archive/": "/verification-archive/index.html",
   "/verification-feed.json": "/verification-feed.json",
-  "/verification-history/": "/verification-history/index.html"
+  "/verification-history/": "/verification-history/index.html",
+  "/guides/growth10-cart-total-reconciliation/": "/guides/growth10-cart-total-reconciliation/index.html"
 }
