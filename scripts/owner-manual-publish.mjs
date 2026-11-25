@@ -35,8 +35,17 @@ const candidates = [4,5].map(offset=>new Date(Date.UTC(year,month-1,day,hour+off
   return +o.year===year && +o.month===month && +o.day===day && +o.hour===hour && +o.minute===minute;
 });
 if (candidates.length!==1) throw new Error("Eastern_time_ambiguous_or_invalid_choose_an_unambiguous_time");
-const observedAt = candidates[0].toISOString();
-if (candidates[0].getTime()>Date.now()+300000) throw new Error("future_evidence_time_not_allowed");
+const exactObserved = String(process.env.OBSERVED_AT || "").trim();
+let observedAt = candidates[0].toISOString();
+if (exactObserved) {
+  const exact = new Date(exactObserved);
+  if (!Number.isFinite(exact.getTime())) throw new Error("observed_at_must_be_valid_iso_timestamp");
+  const exactParts = Object.fromEntries(fmt.formatToParts(exact).map(x=>[x.type,x.value]));
+  if (+exactParts.year!==year || +exactParts.month!==month || +exactParts.day!==day || +exactParts.hour!==hour || +exactParts.minute!==minute) throw new Error("observed_at_does_not_match_observed_eastern_minute");
+  if (exact.getTime() < candidates[0].getTime() || exact.getTime() >= candidates[0].getTime()+60000) throw new Error("observed_at_outside_observed_eastern_minute");
+  observedAt = exact.toISOString();
+}
+if (new Date(observedAt).getTime()>Date.now()+300000) throw new Error("future_evidence_time_not_allowed");
 const pub = path.resolve("public");
 const p=(f)=>path.join(pub,f);
 const read=(f)=>fs.readFileSync(p(f),"utf8");
