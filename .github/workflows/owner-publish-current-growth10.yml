@@ -31,7 +31,7 @@ jobs:
         id: owner
         env:
           SITE_PROFILE: growth10
-          PUBLICATION_MODE: new
+          PUBLICATION_MODE: correction
           OBSERVED_EASTERN: '2026-11-25 04:50'
           OBSERVED_AT: '2026-11-25T09:50:07.141Z'
           EVIDENCE_URL: 'https://growthguysgrowth10.ca/evidence/2026-11-25-growth10-retatrutide/growth10-final-checkout-applied-code.webp'
@@ -43,7 +43,7 @@ jobs:
           LINE_ITEMS_JSON: '[{"name":"Retatrutide 10mg - Single vial","quantity":1,"price_cad":"80.00"}]'
           BITCOIN_ADJUSTMENT: '14.40'
           PAYMENT_METHOD_CHANGED: 'false'
-          OWNER_REASON: 'Owner-approved publication of the genuine November 25 connected-laptop GROWTH10 cart observation using its exact final evidence timestamp.'
+          OWNER_REASON: 'Owner-approved correction publication of the genuine November 25 connected-laptop GROWTH10 cart observation using its exact final evidence timestamp after the prior source push stopped at customer-facing QA.'
           OWNER_CONFIRMED: 'true'
           EVIDENCE_PACKAGE: 'evidence/2026-11-25-growth10-retatrutide/growth10-candidate-package.json'
         run: |
