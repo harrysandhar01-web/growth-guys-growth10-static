@@ -22,6 +22,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Stage retained original evidence for the public record
+        run: |
+          set -euo pipefail
+          mkdir -p public/evidence/2026-11-25-growth10-retatrutide
+          cp evidence/2026-11-25-growth10-retatrutide/growth10-final-checkout-applied-code.webp public/evidence/2026-11-25-growth10-retatrutide/growth10-final-checkout-applied-code.webp
       - name: Build owner-approved update from committed package
         id: owner
         env:
