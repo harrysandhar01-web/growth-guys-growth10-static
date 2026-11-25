@@ -1,5 +1,5 @@
 name: Owner manual publish exact — GROWTH10
-on:
+"on":
   workflow_dispatch:
     inputs:
       mode:
