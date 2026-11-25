@@ -15,6 +15,13 @@ const requiredPages = [
   "guides/growth-guys-growth10-promo-code-savings/index.html",
 ];
 const fail = (message) => { throw new Error(`customer_facing_qa_failed:${message}`); };
+const sitePath = (value) => {
+  try {
+    return new URL(value, "https://growthguysgrowth10.ca/").pathname.replace(/^\//, "");
+  } catch {
+    return String(value).replace(/^\//, "");
+  }
+};
 
 if (record.code !== "GROWTH10") fail("wrong_site_code");
 if (state.latest !== record.record_reference) fail("current_record_state_mismatch");
@@ -36,7 +43,7 @@ for (const file of requiredPages) {
   }
 }
 
-const evidencePath = record.evidence_url.replace(/^\//, "");
+const evidencePath = sitePath(record.evidence_url);
 if (!fs.existsSync(path.join(root, evidencePath))) fail("current_evidence_file_missing");
 const homepage = read("index.html");
 const imageSources = [...homepage.matchAll(/(?:src|href)="(\/evidence\/[^"#?]+)"/g)].map((m) => m[1]);
