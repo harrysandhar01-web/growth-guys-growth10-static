@@ -49,8 +49,34 @@ jobs:
         run: |
           node --check scripts/owner-manual-publish.mjs
           node --check scripts/validate-growth10-evidence.mjs
-          node scripts/owner-manual-publish.mjs
+          if node - <<'NODE'
+          const fs = require('fs');
+          const r = JSON.parse(fs.readFileSync('public/api/current-record.json', 'utf8'));
+          const expected = {
+            code: 'GROWTH10',
+            observed_at: '2026-11-25T09:50:07.141Z',
+            product_name: 'Retatrutide 10mg - Single vial',
+            cart_subtotal: '80.00',
+            discount_amount: '8.00',
+            observed_total: '57.60',
+            bitcoin_adjustment_cad: '14.40',
+            evidence_url: 'https://growthguysgrowth10.ca/evidence/2026-11-25-growth10-retatrutide/growth10-final-checkout-applied-code.webp'
+          };
+          for (const [key, value] of Object.entries(expected)) {
+            if (r[key] !== value) process.exit(1);
+          }
+          const state = JSON.parse(fs.readFileSync('public/owner-publication-state.json', 'utf8'));
+          if (state.latest !== r.record_reference || !/^growth10-owner-20261125095007-/.test(r.record_reference)) process.exit(1);
+          NODE
+          then
+            echo "reused=true" >> "$GITHUB_OUTPUT"
+            echo "record_reference=$(node -p "require('./public/api/current-record.json').record_reference")" >> "$GITHUB_OUTPUT"
+            echo "Reusing the already owner-accepted exact November 25 source record; no duplicate publication created."
+          else
+            node scripts/owner-manual-publish.mjs
+          fi
       - name: Write directly to production source
+        if: steps.owner.outputs.reused != 'true'
         env:
           RECORD: ${{ steps.owner.outputs.record_reference }}
         run: |
