@@ -1,9 +1,11 @@
 {
-  "latest": "growth10-owner-20261125095007-45656093603",
+  "latest": "growth10-owner-20261126064623-45774661741",
   "profile": "growth10",
   "code": "GROWTH10",
-  "observedAt": "2026-11-25T09:50:07.141Z",
-  "submittedAt": "2026-11-25T16:38:47.301Z",
-  "mode": "correction",
-  "previousReference": "growth10-owner-20261125095007-45655755343"
+  "observedAt": "2026-11-26T06:46:23.509Z",
+  "submittedAt": "2026-11-26T07:21:27.055Z",
+  "mode": "new",
+  "previousReference": "growth10-owner-20261125095007-45656093603",
+  "evidenceEventKey": "growth10-2026-11-26-laptop-1795675583509",
+  "publicationPhase": "owner_accepted"
 }

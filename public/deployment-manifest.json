@@ -3,10 +3,10 @@
   "profileId": "growth10",
   "code": "GROWTH10",
   "canonicalOrigin": "https://growthguysgrowth10.ca",
-  "generatedAt": "2026-11-25T16:38:47.301Z",
+  "generatedAt": "2026-11-26T07:21:27.055Z",
   "source": "canonical_public_html_snapshot",
-  "eventKey": "growth10-owner-20261125095007-45656093603",
-  "recordPublishedAt": "2026-11-25T16:38:47.301Z",
+  "eventKey": "growth10-owner-20261126064623-45774661741",
+  "recordPublishedAt": "2026-11-26T07:21:27.055Z",
   "staticRoutes": {
     "/": "/index.html",
     "/about/": "/about/index.html",
@@ -159,12 +159,13 @@
     "/sitemap.xml": "/sitemap.xml",
     "/verification-archive/": "/verification-archive/index.html",
     "/verification-feed.json": "/verification-feed.json",
-    "/verification-history/": "/verification-history/index.html"
+    "/verification-history/": "/verification-history/index.html",
+    "/owner-records/growth10-owner-20261126064623-45774661741/": "/owner-records/growth10-owner-20261126064623-45774661741/index.html"
   },
   "deploymentState": "built_not_deployed",
   "canonicalSnapshot": {
     "generatedAt": "2026-10-19T16:19:11.000Z",
-    "publicRouteCount": 188,
+    "publicRouteCount": 189,
     "publicAssetCount": 34,
     "currentRecordReference": "growth10-observed-20261019-145508",
     "currentRecordObservedAt": "2026-10-19T14:55:08Z",
