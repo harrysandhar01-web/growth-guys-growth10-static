@@ -42,6 +42,11 @@ jobs:
           SITE_PROFILE: growth10
           PUBLICATION_MODE: correction
           OBSERVED_EASTERN: '2026-10-25 09:43'
+          PRODUCT_NAME: 'BPC-157 10mg - Single vial'
+          CART_SUBTOTAL: '60.00'
+          DISCOUNT_AMOUNT: '6.00'
+          DISPLAYED_TOTAL: '43.20'
+          EVIDENCE_URL: '/verification-archive/growth10-observed-20261025-1343edt-approx/'
           OWNER_REASON: 'Preflight test; preserve original evidence and original verified time'
           EVIDENCE_PACKAGE: ${{ github.workspace }}/scripts/fixtures/growth10-preflight-package.json
           BITCOIN_ADJUSTMENT: '10.80'
@@ -73,9 +78,9 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/owner-new-test"
-          cp -a public scripts "$RUNNER_TEMP/owner-new-test/"
+          cp -a "$RUNNER_TEMP/owner-test/public" scripts "$RUNNER_TEMP/owner-new-test/"
           cd "$RUNNER_TEMP/owner-new-test"
           node "$GITHUB_WORKSPACE/scripts/owner-manual-publish.mjs"
           node "$GITHUB_WORKSPACE/scripts/validate-current-record-projection.mjs" public
           node "$GITHUB_WORKSPACE/scripts/validate-canonical-snapshot.mjs" public
-          echo 'New observation dry-run passed; production is unchanged.'
+          echo 'New observation dry-run passed against the isolated October baseline; production is unchanged.'
