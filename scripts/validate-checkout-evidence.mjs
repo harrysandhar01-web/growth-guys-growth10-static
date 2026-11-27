@@ -35,7 +35,7 @@ export function validateCheckoutPackage(packagePath, profile) {
   const scope = p.scope;
   expect(scope && scope.reached_checkout_payment_screen === true, 'checkout_boundary_required');
   for (const key of ['personal_details_entered', 'contact_details_entered', 'identity_entered', 'address_entered', 'payment_details_entered', 'order_submitted', 'payment_submitted']) expect(scope[key] === false, 'prohibited_action:' + key);
-  expect(p.payment_method_selected === true && p.payment_method === 'Credit or Visa Debit' && p.gateway === 'gg_nmi', 'observed_payment_selection');
+  expect(p.payment_method_selected === true && ((p.payment_method === 'Credit or Visa Debit' && p.gateway === 'gg_nmi') || (p.payment_method === 'Interac e-Transfer' && p.gateway === 'gg_interac')), 'observed_payment_selection');
   expect(typeof p.payment_method_changed === 'boolean', 'payment_change_provenance');
   const apply = p.code_application;
   expect(apply && apply.code_entered === cfg.code && apply.final_visible_code === cfg.code.toLowerCase(), 'exact_applied_code');
@@ -57,7 +57,8 @@ export function validateCheckoutPackage(packagePath, profile) {
   expect(subtotal > 0 && discount === Math.round(subtotal * 0.1), 'ten_percent_code_discount');
   expect(subtotal - discount + shipping - fee === total, 'checkout_total_components_do_not_reconcile');
   expect(p.bitcoin_adjustment === '0.00' && p.tax === null && p.tax_scope === 'no separate tax line displayed; no address entered', 'no_invented_bitcoin_or_tax');
-  cents(p.charge_usd, 'displayed_USD_charge');
+  if (p.payment_method === 'Credit or Visa Debit') cents(p.charge_usd, 'displayed_USD_charge');
+  else expect(p.charge_usd === null, 'interac_must_not_publish_USD_charge');
   expect(p.original_screenshot && p.source_excerpt, 'source_files_required');
   for (const source of [p.original_screenshot, p.source_excerpt]) {
     expect(typeof source.path === 'string' && /^[a-zA-Z0-9_.-]+$/.test(source.path), 'safe_local_evidence_path');
@@ -86,9 +87,10 @@ export function validateCheckoutPackage(packagePath, profile) {
   expect(rowValue(x => /class="[^"]*cart-subtotal/.test(x), 'subtotal') === subtotal, 'source_subtotal_mismatch');
   expect(rowValue(x => /class="[^"]*cart-discount/.test(x), 'discount') === discount, 'source_discount_mismatch');
   expect(rowValue(x => /woocommerce-shipping-totals/.test(x), 'shipping') === shipping, 'source_shipping_mismatch');
-  expect(rowValue(x => /Currency fee discount/.test(x), 'currency_fee') === fee, 'source_currency_fee_mismatch');
+  expect(rowValue(x => /Currency fee discount|Interac e-Transfer discount/.test(x), 'currency_fee') === fee, 'source_currency_fee_mismatch');
   expect(rowValue(x => /class="[^"]*order-total/.test(x), 'total') === total, 'source_total_mismatch');
-  expect(text(html).includes('$' + p.charge_usd) && text(html).includes('USD'), 'source_displayed_USD_charge');
+  if (p.payment_method === 'Credit or Visa Debit') expect(text(html).includes('$' + p.charge_usd) && text(html).includes('USD'), 'source_displayed_USD_charge');
+  else expect(!/USD|card charge/i.test(text(html)), 'interac_source_must_not_include_USD');
   expect(p.form_value_audit && Object.values(p.form_value_audit).every(value => value === ''), 'blank_personal_and_payment_fields_required');
   const previous = JSON.parse(fs.readFileSync('public/api/current-record.json', 'utf8'));
   expect(previous.code === cfg.code, 'previous_authoritative_site_record_mismatch');
