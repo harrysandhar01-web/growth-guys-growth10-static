@@ -272,8 +272,9 @@ class Projection:
             block = m[0]
             opening = block[:block.index('>') + 1]
             explicit_summary = any(x in opening for x in ['current-record-refresh', 'verification-record-summary', 'current-verification-summary-title'])
-            if explicit_summary and 'id="current-record"' not in opening:
+            if explicit_summary:
                 opening = re.sub(r'data-observed-at="[^"]*"', 'data-observed-at="' + r['observed_at'] + '"', opening)
+                opening = re.sub(r'data-owner-current-record="[^"]*"', 'data-owner-current-record="' + r['record_reference'] + '"', opening)
                 return opening + self.summary_inner('current-verification-summary-title' if 'current-verification-summary-title' in opening else None) + '</section>'
             if 'id="current-record"' in opening:
                 block = self.field_html(block)
