@@ -3,6 +3,10 @@ on:
   push:
     paths:
       - 'scripts/owner-manual-publish.mjs'
+      - 'scripts/owner-checkout-publish.mjs'
+      - 'scripts/validate-checkout-evidence.mjs'
+      - 'scripts/test-checkout-publication-recovery.mjs'
+      - '.github/workflows/owner-checkout-publish.yml'
       - 'scripts/project-existing-current-record.py'
       - 'scripts/project-current-checkout-copy.py'
       - 'scripts/validate-current-record-projection.mjs'
@@ -14,6 +18,10 @@ on:
   pull_request:
     paths:
       - 'scripts/owner-manual-publish.mjs'
+      - 'scripts/owner-checkout-publish.mjs'
+      - 'scripts/validate-checkout-evidence.mjs'
+      - 'scripts/test-checkout-publication-recovery.mjs'
+      - '.github/workflows/owner-checkout-publish.yml'
       - 'scripts/project-existing-current-record.py'
       - 'scripts/project-current-checkout-copy.py'
       - 'scripts/validate-current-record-projection.mjs'
@@ -33,6 +41,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Test local checkout evidence and safe existing-record recovery
+        run: |
+          node --check scripts/owner-checkout-publish.mjs
+          node scripts/test-checkout-publication-recovery.mjs
       - name: Syntax-check manual publisher
         run: node --check scripts/owner-manual-publish.mjs
       - name: Validate GROWTH10 evidence contract
