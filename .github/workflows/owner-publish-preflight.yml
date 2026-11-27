@@ -4,19 +4,23 @@ on:
     paths:
       - 'scripts/owner-manual-publish.mjs'
       - 'scripts/project-existing-current-record.py'
+      - 'scripts/project-current-checkout-copy.py'
       - 'scripts/validate-current-record-projection.mjs'
       - 'scripts/validate-growth10-evidence.mjs'
       - 'scripts/test-growth10-evidence.mjs'
       - '.github/workflows/owner-manual-publish.yml'
+      - '.github/workflows/owner-manual-publish-exact.yml'
       - '.github/workflows/owner-publish-preflight.yml'
   pull_request:
     paths:
       - 'scripts/owner-manual-publish.mjs'
       - 'scripts/project-existing-current-record.py'
+      - 'scripts/project-current-checkout-copy.py'
       - 'scripts/validate-current-record-projection.mjs'
       - 'scripts/validate-growth10-evidence.mjs'
       - 'scripts/test-growth10-evidence.mjs'
       - '.github/workflows/owner-manual-publish.yml'
+      - '.github/workflows/owner-manual-publish-exact.yml'
       - '.github/workflows/owner-publish-preflight.yml'
 permissions:
   contents: read
