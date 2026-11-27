@@ -103,6 +103,8 @@ jobs:
           node --check scripts/owner-manual-publish.mjs
           node --check scripts/validate-growth10-evidence.mjs
           node scripts/owner-manual-publish.mjs
+      - name: Run customer-facing pre-publication QA
+        run: node scripts/validate-customer-facing-site.mjs
       - name: Write directly to production source
         env:
           RECORD: ${{ steps.owner.outputs.record_reference }}
@@ -117,8 +119,6 @@ jobs:
           git diff --cached --quiet && exit 1
           git commit -m "Owner approved growth10 record $RECORD"
           git push origin HEAD:main
-      - name: Run customer-facing pre-publication QA
-        run: node scripts/validate-customer-facing-site.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -159,7 +159,7 @@ jobs:
               };
               fs.writeFileSync("artifacts/growth10-publication-receipt.json", JSON.stringify(receipt, null, 2) + "\n");
               console.log(JSON.stringify(receipt));
-NODE
+          NODE
               echo "LIVE_CONFIRMED https://growthguysgrowth10.ca/owner-records/$RECORD/"
               exit 0
             fi
