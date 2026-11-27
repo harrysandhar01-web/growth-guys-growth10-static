@@ -101,12 +101,18 @@ jobs:
       - name: Deploy to actual GitHub Pages
         id: deploy
         uses: actions/deploy-pages@v4
+      - name: Confirm canonical routes and slash variants before publication receipt
+        env:
+          SITE_CODE: GROWTH10
+          SITE_ORIGIN: https://growthguysgrowth10.ca
+        run: node scripts/confirm-live-publication.mjs
       - name: Confirm public record
         env:
           RECORD: ${{ steps.owner.outputs.record_reference }}
         run: |
           set -euo pipefail
           for attempt in $(seq 1 12); do
+            rm -f /tmp/readback.json /tmp/readback.html
             curl -fsSL --max-time 20 -H 'Cache-Control: no-cache' "https://growthguysgrowth10.ca/api/current-record.json?check=$GITHUB_RUN_ID-$attempt" -o /tmp/readback.json || true
             curl -fsSL --max-time 20 -H 'Cache-Control: no-cache' "https://growthguysgrowth10.ca/?check=$GITHUB_RUN_ID-$attempt" -o /tmp/readback.html || true
             if node -e 'const fs=require("fs");const r=JSON.parse(fs.readFileSync("/tmp/readback.json"));const h=fs.readFileSync("/tmp/readback.html","utf8");if(r.record_reference!==process.env.RECORD||!h.includes("data-owner-current-record="+String.fromCharCode(34)+process.env.RECORD+String.fromCharCode(34)))process.exit(1)'; then
