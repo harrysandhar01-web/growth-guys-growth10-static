@@ -148,7 +148,7 @@ class Projection:
         self.date = f'{self.observed:%B} {self.observed.day}, {self.observed.year}'
         self.time = f"{self.date} at {self.observed.hour % 12 or 12}:{self.observed.minute:02d} {'a.m.' if self.observed.hour < 12 else 'p.m.'} {self.observed:%Z}"
         self.checkout = record.get('observation_type') == 'checkout'
-        self.method = record['method']
+        self.method = 'Checkout verification' if record['method'] == 'Automated laptop checkout verification' else record['method']
         self.evidence = urljoin(DOMAIN + '/', record['evidence_url'])
         self.status = record['status'].rstrip('.')
         self.message = (f"GROWTH10 was verified as a 10% discount code on {self.product}: "
@@ -314,6 +314,9 @@ class Projection:
         text = text.replace('Latest verified checkout record: 10% cart reduction', 'Latest verified checkout record: 10% item discount')
         text = text.replace('✓ 10% reduction confirmed before payment', '✓ 10% item discount confirmed before payment')
         text = text.replace('✓ 10% reduction recorded before payment', '✓ 10% item discount recorded before payment')
+        if relative in {'index.html', 'growth10/index.html'}:
+            text = re.sub(r'(>)(?:Earlier verified checkout result|Last verified checkout result)(</strong>)[^<]+', lambda m: m[1] + 'Last verified checkout result' + m[2] + escape(self.time), text)
+            text = text.replace('Disposable cart test', 'Checkout test').replace('disposable cart', 'checkout session')
         return restore(text, protected)
 
     def hydration(self, source):
