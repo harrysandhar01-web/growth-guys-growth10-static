@@ -153,7 +153,7 @@ if(!xml.includes("<channel>")) throw Error("unsupported_rss_format");
 const description=escapeHtml(cfg.code+" "+product+" observed "+timeLabel+"; subtotal CAD "+dollars(subtotal)+", discount CAD "+dollars(discount)+", total CAD "+dollars(total)+".");
 const item="<item><guid>https://"+cfg.domain+url+"</guid><title>"+escapeHtml(cfg.code+" verified checkout record")+"</title><link>https://"+cfg.domain+url+"</link><pubDate>"+candidates[0].toUTCString()+"</pubDate><description>"+description+"</description></item>";
 put("feed.xml",xml.replace("<channel>","<channel>"+item).replace(/<lastBuildDate>[^<]*<\/lastBuildDate>/,"<lastBuildDate>"+new Date().toUTCString()+"</lastBuildDate>"));
-for(const file of ["index.html",cfg.route+"/index.html","verification-archive/index.html","verification-history/index.html","how-we-verify/index.html"]){
+for(const file of ["index.html",cfg.route+"/index.html","discount-codes/index.html","growth10-offer-status-and-checkout-help/index.html","verification-archive/index.html","verification-history/index.html","how-we-verify/index.html"]){
   if(!fs.existsSync(p(file))) continue;
   let html=read(file);
   if(!/<body(?:\s[^>]*)?>/i.test(html)) throw Error("missing_body_in_"+file);
