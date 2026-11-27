@@ -1,17 +1,33 @@
 name: Owner publish current GROWTH10
-"on": workflow_dispatch
+"on":
+  workflow_dispatch:
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: read
 concurrency:
   group: pages
   cancel-in-progress: false
 jobs:
-  publish:
-    if: github.actor == 'harrysandhar01-web'
+  authorize:
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    steps:
+      - name: Confirm authenticated owner and main branch
+        env:
+          ACTOR: ${{ github.actor }}
+          REF: ${{ github.ref }}
+        run: |
+          set -euo pipefail
+          if [[ "$ACTOR" != "harrysandhar01-web" || "$REF" != "refs/heads/main" ]]; then
+            echo "::error::Publication requires the authorized owner on main; actor=$ACTOR ref=$REF"
+            exit 1
+          fi
+  publish:
+    needs: authorize
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
@@ -22,102 +38,29 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Stage retained original evidence for the public record
+      - name: Select existing accepted current record without a fresh checkout
+        id: current
         run: |
-          set -euo pipefail
-          mkdir -p public/evidence/2026-11-25-growth10-retatrutide
-          cp evidence/2026-11-25-growth10-retatrutide/growth10-final-checkout-applied-code.webp public/evidence/2026-11-25-growth10-retatrutide/growth10-final-checkout-applied-code.webp
-      - name: Build owner-approved update from committed package
-        id: owner
-        env:
-          SITE_PROFILE: growth10
-          PUBLICATION_MODE: correction
-          OBSERVED_EASTERN: '2026-11-25 04:50'
-          OBSERVED_AT: '2026-11-25T09:50:07.141Z'
-          EVIDENCE_URL: 'https://growthguysgrowth10.ca/evidence/2026-11-25-growth10-retatrutide/growth10-final-checkout-applied-code.webp'
-          PRODUCT_NAME: 'Retatrutide 10mg - Single vial'
-          CART_SUBTOTAL: '80.00'
-          DISCOUNT_AMOUNT: '8.00'
-          DISPLAYED_TOTAL: '57.60'
-          PRODUCT_URL: 'https://growthguys.com/product/retatrutide-10mg/'
-          LINE_ITEMS_JSON: '[{"name":"Retatrutide 10mg - Single vial","quantity":1,"price_cad":"80.00"}]'
-          BITCOIN_ADJUSTMENT: '14.40'
-          PAYMENT_METHOD_CHANGED: 'false'
-          OWNER_REASON: 'Owner-approved correction publication of the genuine November 25 connected-laptop GROWTH10 cart observation using its exact final evidence timestamp after the prior source push stopped at customer-facing QA.'
-          OWNER_CONFIRMED: 'true'
-          EVIDENCE_PACKAGE: 'evidence/2026-11-25-growth10-retatrutide/growth10-candidate-package.json'
-        run: |
-          node --check scripts/owner-manual-publish.mjs
-          node --check scripts/validate-growth10-evidence.mjs
-          if node - <<'NODE'
-          const fs = require('fs');
-          const r = JSON.parse(fs.readFileSync('public/api/current-record.json', 'utf8'));
-          const expected = {
-            code: 'GROWTH10',
-            observed_at: '2026-11-25T09:50:07.141Z',
-            product_name: 'Retatrutide 10mg - Single vial',
-            cart_subtotal: '80.00',
-            discount_amount: '8.00',
-            observed_total: '57.60',
-            bitcoin_adjustment_cad: '14.40',
-            evidence_url: 'https://growthguysgrowth10.ca/evidence/2026-11-25-growth10-retatrutide/growth10-final-checkout-applied-code.webp'
-          };
-          for (const [key, value] of Object.entries(expected)) {
-            if (r[key] !== value) process.exit(1);
-          }
-          const state = JSON.parse(fs.readFileSync('public/owner-publication-state.json', 'utf8'));
-          if (state.latest !== r.record_reference || !/^growth10-owner-20261125095007-/.test(r.record_reference)) process.exit(1);
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const r=JSON.parse(fs.readFileSync('public/api/current-record.json','utf8'));
+          const state=JSON.parse(fs.readFileSync('public/owner-publication-state.json','utf8'));
+          if(r.code!=='GROWTH10'||!r.record_reference||!r.observed_at||r.publication_phase!=='owner_accepted'||state.latest!==r.record_reference)throw Error('No matching accepted current record; refusing to replace verification history');
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,'record_reference='+r.record_reference+'\n');
+          console.log('Reusing accepted current record '+r.record_reference);
           NODE
-          then
-            echo "reused=true" >> "$GITHUB_OUTPUT"
-            echo "record_reference=$(node -p "require('./public/api/current-record.json').record_reference")" >> "$GITHUB_OUTPUT"
-            echo "Reusing the already owner-accepted exact November 25 source record; no duplicate publication created."
-          else
-            node scripts/owner-manual-publish.mjs
-          fi
-      - name: Write directly to production source
-        if: steps.owner.outputs.reused != 'true'
-        env:
-          RECORD: ${{ steps.owner.outputs.record_reference }}
+      - name: Regenerate public projections from the same accepted record
         run: |
-          set -euo pipefail
-          test -n "$RECORD"
-          grep -q "$RECORD" public/api/current-record.json
-          grep -q "$RECORD" public/index.html
-          git config user.name "Owner-Approved GitHub Publication"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/
-          git diff --cached --quiet && exit 1
-          git commit -m "Owner approved growth10 record $RECORD"
-          git push origin HEAD:main
+          python3 scripts/project-existing-current-record.py
+          node scripts/build-public-record-indexes.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
           path: ./public
-          retention-days: 7
-      - name: Deploy to actual GitHub Pages
+      - uses: actions/deploy-pages@v4
         id: deploy
-        uses: actions/deploy-pages@v4
-      - name: Confirm canonical routes and slash variants before publication receipt
+      - name: Confirm current record and all public variants
         env:
           SITE_CODE: GROWTH10
           SITE_ORIGIN: https://growthguysgrowth10.ca
         run: node scripts/confirm-live-publication.mjs
-      - name: Confirm public record
-        env:
-          RECORD: ${{ steps.owner.outputs.record_reference }}
-        run: |
-          set -euo pipefail
-          for attempt in $(seq 1 12); do
-            rm -f /tmp/readback.json /tmp/readback.html
-            curl -fsSL --max-time 20 -H 'Cache-Control: no-cache' "https://growthguysgrowth10.ca/api/current-record.json?check=$GITHUB_RUN_ID-$attempt" -o /tmp/readback.json || true
-            curl -fsSL --max-time 20 -H 'Cache-Control: no-cache' "https://growthguysgrowth10.ca/?check=$GITHUB_RUN_ID-$attempt" -o /tmp/readback.html || true
-            if node -e 'const fs=require("fs");const r=JSON.parse(fs.readFileSync("/tmp/readback.json"));const h=fs.readFileSync("/tmp/readback.html","utf8");if(r.record_reference!==process.env.RECORD||!h.includes("data-owner-current-record="+String.fromCharCode(34)+process.env.RECORD+String.fromCharCode(34)))process.exit(1)'; then
-              echo "LIVE_CONFIRMED https://growthguysgrowth10.ca/owner-records/$RECORD/"
-              exit 0
-            fi
-            sleep 8
-          done
-          echo "::error::Production readback not confirmed"
-          exit 1
