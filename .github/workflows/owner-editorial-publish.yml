@@ -1,0 +1,51 @@
+name: Owner editorial publish — GROWTH10
+
+on:
+  workflow_dispatch:
+    inputs:
+      route:
+        description: 'Editorial route, for example /editorials/seasonal-guide/'
+        required: true
+        type: string
+      title:
+        description: 'Editorial page title'
+        required: true
+        type: string
+      content_file:
+        description: 'Committed repository path containing the editorial body'
+        required: true
+        type: string
+      reason:
+        description: 'Owner reason for the maintenance publication'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  editorial-publish:
+    if: github.actor == 'harrysandhar01-web'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish editorial manifest only
+        env:
+          SITE_PROFILE: growth10
+          GITHUB_ACTOR: ${{ github.actor }}
+          OWNER_CONFIRMED: 'true'
+          OWNER_REASON: ${{ inputs.reason }}
+          EDITORIAL_ROUTE: ${{ inputs.route }}
+          EDITORIAL_TITLE: ${{ inputs.title }}
+          EDITORIAL_CONTENT_FILE: ${{ inputs.content_file }}
+        run: node scripts/editorial-publish.mjs
+      - name: Prove verification record was preserved
+        run: |
+          git diff --exit-code -- public/api/current-record.json public/api/current-record public/owner-records/current.json public/verification-feed.json public/api/verification-feed.json
+      - name: Commit editorial artifacts
+        run: |
+          git config user.name 'Growth Guys owner publisher'
+          git config user.email 'harrysandhar01-web@users.noreply.github.com'
+          git add public/editorial-publications.json public/editorial-publication-state.json
+          git commit -m "Publish GROWTH10 editorial maintenance update"
+          git push
