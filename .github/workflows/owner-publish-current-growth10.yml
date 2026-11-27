@@ -90,8 +90,6 @@ jobs:
           git diff --cached --quiet && exit 1
           git commit -m "Owner approved growth10 record $RECORD"
           git push origin HEAD:main
-      - name: Run customer-facing pre-publication QA
-        run: node scripts/validate-customer-facing-site.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

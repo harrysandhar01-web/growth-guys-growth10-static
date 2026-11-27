@@ -187,5 +187,10 @@ for(const [file,content] of out) write(file,content);
 // Reproject current-page metadata/schema after every owner update so stale SEO fields cannot survive a new record.
 const { execFileSync } = await import("node:child_process");
 execFileSync("python3", ["scripts/project-existing-current-record.py"], { stdio: "inherit" });
+// One local, site-scoped consistency stage replaces the former separate
+// workflow QA gate. It checks the current-record projection, canonical/sitemap
+// snapshot, and customer-facing pages without WebDev, WebDAV, or an external
+// acceptance service.
+execFileSync("node", ["scripts/validate-owner-publication.mjs"], { stdio: "inherit" });
 if(process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT,"record_reference="+id+"\n");
 console.log("OWNER_PUBLICATION_STAGED "+JSON.stringify({id,profile,mode,files:out.size,dateLabel}));
