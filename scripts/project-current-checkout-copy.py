@@ -326,6 +326,8 @@ class Projection:
         if relative in {'index.html', 'growth10/index.html'}:
             text = re.sub(r'(>)(?:Earlier verified checkout result|Last verified checkout result)(</strong>)[^<]+', lambda m: m[1] + 'Last verified checkout result' + m[2] + escape(self.time), text)
             text = text.replace('Disposable cart test', 'Checkout test').replace('disposable cart', 'checkout session')
+        if relative == 'index.html':
+            text = re.sub(r'(<h1\b[^>]*>).*?(</h1>)', lambda m: m[1] + 'Growth Guys Promo Code GROWTH10 — 10% Off, Verified Daily at Checkout' + m[2], text, count=1, flags=re.S)
         return restore(text, protected)
 
     def hydration(self, source):
