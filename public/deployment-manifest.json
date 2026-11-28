@@ -163,12 +163,13 @@
     "/owner-records/growth10-owner-20261126064623-45774661741/": "/owner-records/growth10-owner-20261126064623-45774661741/index.html",
     "/owner-records/growth10-owner-20261127203435-46064863051/": "/owner-records/growth10-owner-20261127203435-46064863051/index.html",
     "/owner-records/growth10-owner-20261127204802-46066495438/": "/owner-records/growth10-owner-20261127204802-46066495438/index.html",
-    "/owner-records/growth10-owner-20261128041451-46106851186/": "/owner-records/growth10-owner-20261128041451-46106851186/index.html"
+    "/owner-records/growth10-owner-20261128041451-46106851186/": "/owner-records/growth10-owner-20261128041451-46106851186/index.html",
+    "/editorials/black-friday-2026-cart-discount-analysis/": "/editorials/black-friday-2026-cart-discount-analysis/index.html"
   },
   "deploymentState": "built_not_deployed",
   "canonicalSnapshot": {
     "generatedAt": "2026-10-19T16:19:11.000Z",
-    "publicRouteCount": 192,
+    "publicRouteCount": 193,
     "publicAssetCount": 34,
     "currentRecordReference": "growth10-observed-20261019-145508",
     "currentRecordObservedAt": "2026-10-19T14:55:08Z",
