@@ -116,7 +116,7 @@ def mask(source):
         block = source[start:end]
         historical_article = tag == 'article' and 'Current documented record' not in plain(block)
         if (tag in {'script', 'style'} or historical_article or
-                (tag == 'section' and ('historical-record-refresh' in classes or 'growth10-evidence-gallery' in classes or 'growth10-black-friday-editorial' in classes)) or
+                (tag == 'section' and ('historical-record-refresh' in classes or 'growth10-evidence-gallery' in classes or 'growth10-black-friday-editorial' in classes or 'growth10-reader-desk' in classes)) or
                 (tag == 'div' and 'g10-history' in classes.split())):
             ranges.append((start, end))
     ranges.extend((m.start(), m.end()) for m in re.finditer(r'<!-- OWNER_RECORD_START -->[\s\S]*?<!-- OWNER_RECORD_END -->', source))

@@ -15,3 +15,7 @@ The root URL is the primary general information page. The /growth10/ URL is a di
 ## November 28 follow-up: indexing and automated publishing
 
 The root remains indexable and self-canonical; the supporting pages stay accessible and indexable. Root title, H1 and structured metadata describe its primary role. Static validation now parses the Python projector before publishing to catch syntax errors. This is a technical readiness check, not evidence of Google indexing or ranking. Do not request artificial sitemap timestamps or remove the ranked satellite without specific authorization. Search Console URL Inspection and sitemap submission remain the external confirmation steps.
+
+## November 28 reader-first differentiation
+
+The main GROWTH10 homepage contains a concise reader desk with explicit publisher and commercial-interest disclosure, links to the latest evidence and archive, and a correction channel. Keep this original reader-facing section intact during automated projection. Do not imply that VIP10 or Peptide Index independently corroborates a shared observation; do not change Search Console ownership for ranking purposes. Do not alter an existing satellite property's indexing or redirect behavior without explicit authorization. No mass production of duplicate keyword pages or artificial freshness updates.
