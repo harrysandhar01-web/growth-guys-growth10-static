@@ -158,7 +158,7 @@ class Projection:
             self.total_message += (f", including CAD {record['shipping_cad']} shipping and a separate "
                                    f"CAD {record['currency_fee_discount_cad']} currency-fee discount. "
                                    f"The displayed USD charge was {record['charge_usd']}; no charge was submitted. "
-                                   f"Bitcoin adjustment: CAD {record['bitcoin_adjustment_cad']}.")
+                                   f"Bitcoin discount: CAD {record['bitcoin_adjustment_cad']}.")
             self.payment = 'Credit/Visa Debit remained selected; payment details stayed blank. No payment was submitted and no order was placed.'
         else:
             self.total_message += '. Shipping and other adjustments are separate from the code discount.'

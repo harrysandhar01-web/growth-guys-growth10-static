@@ -39,7 +39,7 @@ name: Owner manual publish exact — GROWTH10
         description: "Verified line items JSON for this exact record; omit if unverified"
       bitcoin_adjustment:
         type: string
-        description: "Displayed Bitcoin adjustment in CAD; omit if not visible"
+        description: "Displayed Bitcoin discount in CAD; omit if not visible"
       payment_method_changed:
         type: boolean
         required: true
