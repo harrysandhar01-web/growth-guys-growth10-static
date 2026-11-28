@@ -116,7 +116,7 @@ def mask(source):
         block = source[start:end]
         historical_article = tag == 'article' and 'Current documented record' not in plain(block)
         if (tag in {'script', 'style'} or historical_article or
-                (tag == 'section' and ('historical-record-refresh' in classes or 'growth10-evidence-gallery' in classes)) or
+                (tag == 'section' and ('historical-record-refresh' in classes or 'growth10-evidence-gallery' in classes or 'growth10-black-friday-editorial' in classes)) or
                 (tag == 'div' and 'g10-history' in classes.split())):
             ranges.append((start, end))
     ranges.extend((m.start(), m.end()) for m in re.finditer(r'<!-- OWNER_RECORD_START -->[\s\S]*?<!-- OWNER_RECORD_END -->', source))
@@ -155,11 +155,14 @@ class Projection:
                         f"CAD {record['discount_cad']} off the CAD {record['subtotal_cad']} item subtotal. ")
         self.total_message = f"The merchant's displayed final total was CAD {record['total_cad']}"
         if self.checkout:
-            self.total_message += (f", including CAD {record['shipping_cad']} shipping and a separate "
-                                   f"CAD {record['currency_fee_discount_cad']} currency-fee discount. "
-                                   f"The displayed USD charge was {record['charge_usd']}; no charge was submitted. "
-                                   f"Bitcoin discount: CAD {record['bitcoin_adjustment_cad']}.")
-            self.payment = 'Credit/Visa Debit remained selected; payment details stayed blank. No payment was submitted and no order was placed.'
+            method = record.get('payment_method') if record.get('payment_method_selected') else None
+            label = 'Interac e-Transfer discount' if method == 'Interac e-Transfer' else 'payment or currency adjustment'
+            self.total_message += f", including CAD {record['shipping_cad']} shipping and CAD {record['currency_fee_discount_cad']} {label}."
+            if float(record.get('bitcoin_adjustment_cad') or 0) > 0:
+                self.total_message += f" Bitcoin discount: CAD {record['bitcoin_adjustment_cad']}."
+            if method and record.get('charge_usd') is not None and ('card' in method.lower() or 'visa' in method.lower() or 'credit' in method.lower()):
+                self.total_message += f" Displayed USD card charge: {record['charge_usd']}."
+            self.payment = (f"{method} was selected. " if method else '') + 'No payment was submitted and no order was placed.'
         else:
             self.total_message += '. Shipping and other adjustments are separate from the code discount.'
             self.payment = record['scope']
@@ -289,6 +292,8 @@ class Projection:
                     block = self.field_html(block)
             if 'growth10-search-hub' in opening:
                 block = self.field_html(block)
+                block = re.sub(r'(<p class="g10-lede">)[\s\S]*?(</p>)', lambda m: m[1] + escape(self.answer) + m[2], block)
+                block = re.sub(r'(<span class="g10-fact-label">Observed reduction</span><span class="g10-fact-value">)[^<]*(</span>)', lambda m: m[1] + 'CAD ' + escape(self.record['discount_cad']) + m[2], block)
                 block = re.sub(r'The latest record shows .*?No purchase was made\.', escape(self.answer), block, flags=re.S)
             return block
         text = re.sub(r'<section\b[^>]*>[\s\S]*?</section>', section, text)
