@@ -1,6 +1,12 @@
+import { execFileSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
 import { existsSync, readFileSync } from "node:fs";
 import { join as joinFile, resolve as resolveDir } from "node:path";
 const ownerDir = resolveDir(process.argv[2] ?? "public");
+// Catch broken Python projection code before the next publication job.
+const projector = fileURLToPath(new URL("./project-current-checkout-copy.py", import.meta.url));
+if (existsSync(projector)) execFileSync("python3", ["-c", "import ast,sys; ast.parse(open(sys.argv[1], encoding='utf-8').read())", projector], {stdio:"inherit"});
+
 if (existsSync(joinFile(ownerDir,"owner-publication-state.json"))) {
   const j = f => JSON.parse(readFileSync(joinFile(ownerDir,f),"utf8"));
   const record=j("api/current-record.json");
