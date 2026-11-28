@@ -27,3 +27,5 @@ node scripts/editorial-publish.mjs
 ## Editorial dates and publishing independence
 
 Owner-authorized editorial HTML, features, FAQs and ordinary corrections must not depend on a new checkout run or checkout-specific acceptance. The editorial publication date and a merchant promotion's end date are separate from any verification observation timestamp. Projection scripts must preserve editorial blocks, source attribution and historical evidence. Payment-method wording in current summaries must come from the current record; omit absent USD card charges. Keep current-record APIs and evidence immutable during an editorial-only change.
+
+Historical checkout results must remain in their dated archive pages. Do not reinsert the October 22, 2026 historical record or its individual preview on the homepage or current GROWTH10 page. Current pages should emphasize the latest observation and link to the archive for older individual records. Retain original archive pages and evidence unchanged.
