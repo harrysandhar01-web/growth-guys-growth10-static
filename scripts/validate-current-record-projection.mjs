@@ -11,11 +11,11 @@ if (existsSync(joinFile(ownerDir,"owner-publication-state.json"))) {
   const feed=j("verification-feed.json");
   const has=state.profile==="vip10" ? feed.records.some(x=>x.recordReference===state.latest) : feed.items.some(x=>x.id===state.latest);
   if (!has) throw Error("owner_record_absent_from_public_feed");
-  const displayDate=new Intl.DateTimeFormat("en-US",{timeZone:"America/Toronto",month:"long",day:"numeric",year:"numeric"}).format(new Date(record.observed_at));
+  const displayDate=new Intl.DateTimeFormat("en-US",{timeZone:"UTC",month:"long",day:"numeric",year:"numeric"}).format(new Date(record.observed_at));
   // The owner event key is UTC-based; customer-facing publication dates must
-  // follow the accepted record's Toronto observation date instead of the UTC
-  // calendar date embedded in the key.
-  const publicationDate=new Intl.DateTimeFormat("en-US",{timeZone:"America/Toronto",month:"long",day:"numeric",year:"numeric"}).format(new Date(record.observed_at));
+  // follow the accepted observation's calendar date while preserving the
+  // exact UTC timestamp in machine data.
+  const publicationDate=new Intl.DateTimeFormat("en-US",{timeZone:"UTC",month:"long",day:"numeric",year:"numeric"}).format(new Date(record.observed_at));
   for (const file of ["index.html",cfg.route+"/index.html","verification-archive/index.html", "guides/growth-guys-growth10-promo-code-savings/index.html"]) {
     const html=readFileSync(joinFile(ownerDir,file),"utf8");
     // Public pages use the customer-facing current-record block; an internal
@@ -64,7 +64,7 @@ const publicDir = resolve(process.argv[2] ?? "public");
 const record = JSON.parse(await readFile(join(publicDir, "api/current-record.json"), "utf8"));
 const observedAt = new Date(record.observed_at);
 if (Number.isNaN(observedAt.getTime())) throw new Error("invalid_current_record_observed_at");
-const displayDate = new Intl.DateTimeFormat("en-US", { timeZone: "America/Toronto", month: "long", day: "numeric", year: "numeric" }).format(observedAt);
+const displayDate = new Intl.DateTimeFormat("en-US", { timeZone: "UTC", month: "long", day: "numeric", year: "numeric" }).format(observedAt);
 const pages = ["index.html","growth10/index.html","discount-codes/index.html","verification-archive/index.html","verification-history/index.html","how-we-verify/index.html"];
 for (const relative of pages) {
   const html = (await readFile(join(publicDir, relative), "utf8")).replace(/\$\s+/g, "$").replace(/\s+/g, " ");
