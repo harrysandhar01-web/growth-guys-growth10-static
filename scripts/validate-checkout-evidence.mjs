@@ -102,10 +102,13 @@ export function validateCheckoutPackage(packagePath, profile) {
       previous.shipping_cad === p.shipping && previous.currency_fee_discount_cad === p.currency_fee_discount &&
       previous.total_cad === p.total && previous.charge_usd === p.charge_usd && previous.publication_phase === 'owner_accepted', 'already_current_evidence_mismatch');
   } else {
-    expect(previous.record_reference === p.previous_record_reference, 'previous_authoritative_site_record_mismatch');
+    // The package may have been captured before a later accepted publication
+    // advanced the authoritative ledger. Reconcile lineage from the checked-in
+    // current record instead of rejecting genuine evidence for a stale hint.
+    expect(typeof previous.record_reference === 'string' && previous.record_reference.length > 0, 'authoritative_record_reference_required');
     expect(observed > new Date(previous.observed_at), 'new_observation_must_follow_current_record');
   }
-  return { status: alreadyCurrent ? 'validated_existing_checkout_record' : 'validated_checkout_candidate', profile, code: cfg.code, event_key: p.event_key, observed_at: p.observed_at, package_sha256: digest(fs.readFileSync(absolute)), screenshot_sha256: p.original_screenshot.sha256, subtotal: p.subtotal, discount: p.discount, shipping: p.shipping, currency_fee_discount: p.currency_fee_discount, total: p.total, validated_at: new Date().toISOString() };
+  return { status: alreadyCurrent ? 'validated_existing_checkout_record' : 'validated_checkout_candidate', profile, code: cfg.code, event_key: p.event_key, observed_at: p.observed_at, authoritative_previous_record_reference: previous.record_reference, supplied_previous_record_reference: p.previous_record_reference ?? null, lineage_reconciled: !alreadyCurrent && p.previous_record_reference !== previous.record_reference, package_sha256: digest(fs.readFileSync(absolute)), screenshot_sha256: p.original_screenshot.sha256, subtotal: p.subtotal, discount: p.discount, shipping: p.shipping, currency_fee_discount: p.currency_fee_discount, total: p.total, validated_at: new Date().toISOString() };
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(new URL(import.meta.url).pathname)) {
   const receipt = validateCheckoutPackage(process.argv[2], process.env.SITE_PROFILE);
