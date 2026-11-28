@@ -6,6 +6,20 @@
   "description": "Current and historical successful GROWTH10 pre-payment verified checkout records.",
   "items": [
     {
+      "id": "growth10-owner-20261128041451-46106851186",
+      "url": "https://growthguysgrowth10.ca/owner-records/growth10-owner-20261128041451-46106851186/",
+      "title": "GROWTH10: 10% code discount verified November 27, 2026",
+      "date_published": "2026-11-28T04:14:51.960Z",
+      "date_modified": "2026-11-28T04:17:57.265Z",
+      "content_text": "GROWTH10 applied a 10% code discount: CAD $4.00 off the CAD $40.00 Tirzepatide 10mg - Single vial. The merchant displayed CAD $52.40 including CAD $20.00 shipping and a separate CAD $3.60 Interac e-Transfer discount. Interac was selected; no USD card-charge amount was displayed. Confirmed before payment; no order submitted.",
+      "attachments": [
+        {
+          "url": "https://growthguysgrowth10.ca/evidence/2026-11-28-growth10-laptop-interac-1795839291960/original-checkout.webp",
+          "title": "Original checkout evidence"
+        }
+      ]
+    },
+    {
       "id": "growth10-owner-20261127204802-46066495438",
       "url": "https://growthguysgrowth10.ca/owner-records/growth10-owner-20261127204802-46066495438/",
       "title": "GROWTH10: 10% code discount verified November 27, 2026",
